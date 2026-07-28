@@ -48,6 +48,12 @@
             margin-bottom: 15px;
             font-size: 1.3rem;
         }
+        h3 {
+            color: #1f2937;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
         p {
             margin-bottom: 15px;
         }
@@ -57,6 +63,21 @@
         }
         li {
             margin-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border: 1px solid #e5e7eb;
+            vertical-align: top;
+        }
+        th {
+            background: #f9fafb;
         }
         .summary {
             background: #ecfdf5;
@@ -81,68 +102,110 @@
             padding-top: 20px;
             border-top: 1px solid #e5e7eb;
         }
-        .contact a {
+        .contact a, a {
             color: #10b981;
+        }
+        .contact a {
             text-decoration: none;
         }
         .contact a:hover {
             text-decoration: underline;
+        }
+        .attribution {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: #666;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last Updated: December 1, 2025</p>
+        <p class="last-updated">Last Updated: July 28, 2026</p>
 
         <div class="intro">
-            <p>SelfOS ("we", "our", or "the app") is committed to protecting your privacy. This policy explains how we handle your data in our mobile application available on Google Play Store and Apple App Store.</p>
+            <p>SelfOS ("we", "our", or "the app") is built local-first: your planner and health content lives on your device, and the app works without an account. This policy explains — specifically and completely — what data stays on your device, what leaves it and why, and the choices you have. It applies to the SelfOS mobile application on the Apple App Store and Google Play.</p>
         </div>
 
-        <h2>1. Local-First Storage</h2>
-        <p>Your personal data stays on your device.</p>
+        <h2>1. Data That Stays on Your Device</h2>
+        <p>Everything you create in SelfOS is stored locally on your device and is never uploaded to us:</p>
         <ul>
-            <li>Tasks, goals, habits, and lists stored locally</li>
-            <li>Photos stored only on your device</li>
-            <li>Backup files saved to your device storage</li>
-            <li>No cloud sync or external data storage</li>
+            <li>Tasks, goals, habits, shopping lists and notes</li>
+            <li>Health entries: water, nutrition and meals, sleep, workouts and steps</li>
+            <li>Personal parameters you enter (such as height, weight, birth date, activity level) and their history</li>
+            <li>Photos you attach, custom themes and backgrounds</li>
+            <li>Streak, achievements and statistics</li>
+        </ul>
+        <p>Backups and exports are created only when you request them, and are saved to your device storage (or wherever you choose to share them). We have no access to your backups. There is no account and no cloud copy of this content: if you delete the app without a backup, this data is gone.</p>
+
+        <h2>2. Data That Leaves Your Device</h2>
+        <p>A small, defined set of technical data is processed by service providers so the app can function and improve. None of it includes the content you create.</p>
+
+        <table>
+            <tr>
+                <th>What</th>
+                <th>Service</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td><strong>Anonymous usage analytics</strong></td>
+                <td>Google Firebase Analytics</td>
+                <td>Which features are used (for example "a task was created" or "water was logged"), device model, OS version, app version, language and approximate country. Events never include the text or values you enter. We do not collect advertising identifiers, ads personalization is disabled, and raw analytics data is retained for 2 months. <strong>You can turn analytics off any time in Profile → Privacy.</strong></td>
+            </tr>
+            <tr>
+                <td><strong>Crash reports</strong></td>
+                <td>Firebase Crashlytics</td>
+                <td>Technical crash information (stack trace, device state at the moment of a crash) used only to find and fix bugs. Covered by the same in-app Privacy toggle.</td>
+            </tr>
+            <tr>
+                <td><strong>Purchases</strong></td>
+                <td>RevenueCat, Apple App Store, Google Play</td>
+                <td>An anonymous app identifier and your purchase/subscription state, used to unlock Premium and restore purchases. Payments are processed entirely by Apple or Google — we never see your payment details.</td>
+            </tr>
+            <tr>
+                <td><strong>Food search</strong></td>
+                <td>Supabase (our search function), fatsecret Platform API, Open Food Facts</td>
+                <td>When you search the food database or scan a barcode, the search text or barcode number is sent to return matching foods. No personal data, health data or user identifiers are attached to these requests. See fatsecret's privacy policy at <a href="https://www.fatsecret.com/Default.aspx?pa=pp">fatsecret.com</a>; Open Food Facts is a public database.</td>
+            </tr>
+        </table>
+
+        <h2>3. What We Never Do</h2>
+        <ul>
+            <li>No accounts required, no registration, no email collection</li>
+            <li>No advertising in the app and no advertising identifiers collected</li>
+            <li>No cross-app or cross-site tracking</li>
+            <li>No selling or renting of data to anyone</li>
+            <li>Your health entries and personal content never leave your device</li>
         </ul>
 
-        <h2>2. Data We Process</h2>
-        <p>We process the following data:</p>
+        <h2>4. Data Retention &amp; Deletion</h2>
         <ul>
-            <li>Subscription data via RevenueCat (purchase validation only)</li>
-            <li>Anonymous analytics (app usage patterns, no personal data)</li>
-            <li>Device type for app optimization (iOS/Android)</li>
-            <li>Crash reports to improve app stability</li>
+            <li><strong>On-device data</strong> is under your direct control: delete entries in the app, or delete everything by uninstalling the app.</li>
+            <li><strong>Analytics raw data</strong> is automatically deleted by Google after 2 months; only aggregated statistics remain.</li>
+            <li><strong>Purchase records</strong> are kept as long as required to honor your subscription and by tax/accounting law of the store operators.</li>
+            <li>To request deletion of server-side data associated with your anonymous identifiers, contact us at the email below.</li>
         </ul>
 
-        <h2>3. Your Rights & Control</h2>
-        <p>You have complete control over your data:</p>
-        <ul>
-            <li>Export all data anytime via backup feature</li>
-            <li>Delete all data by uninstalling the app</li>
-            <li>Manage subscriptions via App Store or Google Play</li>
-        </ul>
+        <h2>5. Your Rights</h2>
+        <p>Depending on where you live (including under the EU/UK GDPR), you have the right to access, correct, delete, restrict or object to the processing of your personal data, the right to data portability, and the right to lodge a complaint with your supervisory authority. Because SelfOS stores your content on your device, most of these rights are literally in your hands — the export feature gives you your full data, and deletion is one uninstall away. For anything server-side, email us and we will help.</p>
 
-        <h2>4. Third-Party Services</h2>
-        <p>We use trusted third-party services:</p>
-        <ul>
-            <li>RevenueCat - subscription management</li>
-            <li>Google Play / App Store - payment processing</li>
-            <li>Analytics - anonymous usage statistics</li>
-        </ul>
+        <h2>6. International Transfers</h2>
+        <p>Our service providers (Google, RevenueCat, Supabase) may process the technical data described above on servers in the United States and the European Union, under safeguards such as Standard Contractual Clauses and/or the EU–US Data Privacy Framework.</p>
 
-        <h2>5. Children's Privacy</h2>
+        <h2>7. Children's Privacy</h2>
         <p>SelfOS is intended for users aged 13 and older. We do not knowingly collect data from children under 13. If you believe a child has provided us data, please contact us.</p>
+
+        <h2>8. Changes to This Policy</h2>
+        <p>If we change what data is processed (for example, when optional accounts and sync are introduced in the future), we will update this policy before the change ships and note the new date above. Material changes will also be announced in the app.</p>
 
         <div class="summary">
             <h2>In Simple Terms</h2>
             <ul>
-                <li>Your tasks, goals, and habits stay on your device</li>
-                <li>We only process subscription and anonymous analytics data</li>
-                <li>No personal data is sold or shared with advertisers</li>
-                <li>You can delete everything by uninstalling the app</li>
+                <li>Your tasks, habits and health entries stay on your device — we can't see them</li>
+                <li>What leaves the device: anonymous usage statistics (can be turned off), crash reports, purchase state, and food-search queries</li>
+                <li>No ads, no ad identifiers, no tracking, no selling data</li>
+                <li>Delete everything at any time — it's your device</li>
             </ul>
             <p class="tagline">Your data, your device, your privacy.</p>
         </div>
@@ -151,6 +214,7 @@
             <p>Questions about privacy?</p>
             <p><a href="mailto:selfos.contact@gmail.com">selfos.contact@gmail.com</a></p>
         </div>
+        <p class="attribution"><a href="https://platform.fatsecret.com">Powered by fatsecret Platform API</a></p>
     </div>
 </body>
 </html>
