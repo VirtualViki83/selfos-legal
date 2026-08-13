@@ -122,7 +122,7 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last Updated: July 28, 2026</p>
+        <p class="last-updated">Last Updated: August 13, 2026</p>
 
         <div class="intro">
             <p>SelfOS ("we", "our", or "the app") is built local-first: your planner and health content lives on your device, and the app works without an account. This policy explains — specifically and completely — what data stays on your device, what leaves it and why, and the choices you have. It applies to the SelfOS mobile application on the Apple App Store and Google Play.</p>
@@ -135,9 +135,10 @@
             <li>Health entries: water, nutrition and meals, sleep, workouts and steps</li>
             <li>Personal parameters you enter (such as height, weight, birth date, activity level) and their history</li>
             <li>Photos you attach, custom themes and backgrounds</li>
+            <li>Calendar events you choose to import — read from your device's calendar with your permission and turned into local tasks; the events themselves are never sent anywhere</li>
             <li>Streak, achievements and statistics</li>
         </ul>
-        <p>Backups and exports are created only when you request them, and are saved to your device storage (or wherever you choose to share them). We have no access to your backups. There is no account and no cloud copy of this content: if you delete the app without a backup, this data is gone.</p>
+        <p>Backups and exports are created only when you request them, and are saved to your device storage (or wherever you choose to share them). We have no access to your backups. There is no account and no cloud copy of this content on our side: if you delete the app without a backup, this data is gone. Note that, like any app, SelfOS's local data may be included in your device's own system backup (iCloud on iOS, Google backup on Android) if you have it enabled — those backups are created, encrypted and managed by Apple or Google under your OS settings, and we have no access to them.</p>
 
         <h2>2. Data That Leaves Your Device</h2>
         <p>A small, defined set of technical data is processed by service providers so the app can function and improve. None of it includes the content you create.</p>
@@ -166,7 +167,7 @@
             <tr>
                 <td><strong>Food search</strong></td>
                 <td>Supabase (our search function), fatsecret Platform API, Open Food Facts</td>
-                <td>When you search the food database or scan a barcode, the search text or barcode number is sent to return matching foods. Requests are made under an anonymous session; no personal data or health data is attached to them. See fatsecret's privacy policy at <a href="https://www.fatsecret.com/Default.aspx?pa=pp">fatsecret.com</a>; Open Food Facts is a public database.</td>
+                <td>When you search the food database or scan a barcode, the search text or barcode number is sent to return matching foods. Barcode scanning itself happens on your device: camera frames are processed locally and are never stored or transmitted — only the recognized barcode number is sent to look up the product. Requests are made under an anonymous session; no personal data or health data is attached to them. See fatsecret's privacy policy at <a href="https://www.fatsecret.com/Default.aspx?pa=pp">fatsecret.com</a>; Open Food Facts is a public database.</td>
             </tr>
             <tr>
                 <td><strong>Gallery &amp; promo images</strong></td>
@@ -174,6 +175,16 @@
                 <td>When you browse the background gallery or view promo banners, the images are loaded from these image services — a standard web request that, like any download, exposes your IP address to the host. No other data is sent.</td>
             </tr>
         </table>
+
+        <h3>App permissions and what they are for</h3>
+        <p>SelfOS asks for a permission only when you use the feature that needs it, and uses each one for exactly one purpose:</p>
+        <ul>
+            <li><strong>Camera</strong> — scanning food barcodes. Frames are processed on-device and never stored or transmitted.</li>
+            <li><strong>Calendar (read)</strong> — importing your events as tasks. Read-only, on-device; nothing is uploaded.</li>
+            <li><strong>Motion &amp; Fitness / Health Connect (steps)</strong> — showing your daily step count. Stays on your device.</li>
+            <li><strong>Notifications</strong> — reminders you configure yourself. You can decline any of these and the rest of the app keeps working.</li>
+            <li><strong>Photos</strong> — attaching pictures you choose to tasks, goals and meals. Selected via the system picker; stored locally.</li>
+        </ul>
 
         <h2>3. Legal Bases for Processing (GDPR)</h2>
         <p>Where the EU/UK GDPR applies, we rely on the following legal bases:</p>
@@ -199,7 +210,7 @@
 
         <h2>6. Data Retention &amp; Deletion</h2>
         <ul>
-            <li><strong>On-device data</strong> is under your direct control: delete entries in the app, or delete everything by uninstalling the app.</li>
+            <li><strong>On-device data</strong> is under your direct control: delete individual entries in the app, use <strong>Profile → Data → Delete All Data</strong> to erase everything at once (your content, photos, local backups and the anonymous session), or simply uninstall the app.</li>
             <li><strong>Analytics raw data</strong> is automatically deleted by Google after 2 months; only aggregated statistics remain.</li>
             <li><strong>Purchase records</strong> are kept as long as required to honor your subscription and by tax/accounting law of the store operators.</li>
             <li>To request deletion of server-side data associated with your anonymous identifiers, contact us at the email below.</li>
@@ -230,6 +241,7 @@
             <ul>
                 <li>Your tasks, habits and health entries stay on your device — we can't see them</li>
                 <li>What leaves the device: anonymous usage statistics (can be turned off), crash reports, purchase state, and food-search queries</li>
+                <li>Camera and calendar are used only on your device — for barcode scanning and importing events as tasks</li>
                 <li>No ads, no ad identifiers, no tracking, no selling data</li>
                 <li>Delete everything at any time — it's your device</li>
             </ul>
