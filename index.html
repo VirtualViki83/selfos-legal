@@ -1,117 +1,631 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SelfOS - Legal</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        .container {
-            max-width: 500px;
-            text-align: center;
-        }
-        .logo {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-        h1 {
-            color: white;
-            margin-bottom: 10px;
-            font-size: 2.5rem;
-        }
-        .tagline {
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-        }
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        a {
-            display: block;
-            padding: 20px 30px;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 12px;
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-        a:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-        }
-        .privacy {
-            border-color: #10b981;
-        }
-        .privacy:hover {
-            background: rgba(16, 185, 129, 0.2);
-        }
-        .terms {
-            border-color: #f59e0b;
-        }
-        .terms:hover {
-            background: rgba(245, 158, 11, 0.2);
-        }
-        .contact {
-            margin-top: 40px;
-            color: rgba(255,255,255,0.5);
-            font-size: 0.9rem;
-        }
-        .contact a {
-            display: inline;
-            padding: 0;
-            background: none;
-            border: none;
-            color: #10b981;
-            font-size: 0.9rem;
-        }
-        .contact a:hover {
-            background: none;
-            transform: none;
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SelfOS - Self-Care Tracker & Daily Planner for iPhone and Android</title>
+<meta name="description" content="SelfOS is a self-care tracker and daily planner for iOS and Android: habit tracker, goal tracker, water, sleep, nutrition and activity trackers in one calm app, with a bonsai that grows from your daily care. Free on the App Store and Google Play.">
+<link rel="canonical" href="https://selfosapp.com/">
+<meta name="apple-itunes-app" content="app-id=6756428834">
+<meta name="theme-color" content="#cddbd3">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SelfOS">
+<meta property="og:title" content="SelfOS - Care for every part of you">
+<meta property="og:description" content="Water, meals, sleep, activity, tasks, goals and habits in one calm app. And a bonsai that grows from your daily self-care.">
+<meta property="og:url" content="https://selfosapp.com/">
+<meta property="og:image" content="https://selfosapp.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<script>
+  // theme before paint: saved choice, else system
+  (function () {
+    var t = (location.search.match(/[?&]theme=(dark|light)/) || [])[1] || null;
+    if (!t) { try { t = localStorage.getItem("selfos-theme"); } catch (e) {} }
+    if (t !== "dark" && t !== "light") t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["SoftwareApplication", "MobileApplication"],
+  "name": "SelfOS: Self-Care Tracker",
+  "alternateName": ["SelfOS", "SelfOS app", "Селфос"],
+  "url": "https://selfosapp.com/",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "HealthApplication",
+  "description": "Self-care tracker and daily planner for iOS and Android: habit tracker, goal tracker, water tracker, sleep tracker, nutrition tracker, activity tracker, tasks and shopping lists in one calm app, with a bonsai that grows from your daily care. Local-first, no sign-up required.",
+  "featureList": ["Daily planner with tasks on a timeline", "Goal tracker with steps and deadlines", "Habit tracker with streaks", "Water tracker", "Nutrition tracker with food search and barcode scanning", "Sleep tracker", "Activity tracker", "Shopping lists", "Self-care bonsai that grows with your streak", "Works offline, data stays on the device"],
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "author": {"@type": "Person", "name": "Viktoriia Smyrnova"},
+  "inLanguage": ["en", "uk", "ru"],
+  "downloadUrl": [
+    "https://apps.apple.com/app/apple-store/id6756428834?pt=128364304&ct=website&mt=8",
+    "https://play.google.com/store/apps/details?id=com.selfos.app"
+  ],
+  "sameAs": [
+    "https://www.threads.com/@selfos.life",
+    "https://www.instagram.com/selfos.life/",
+    "https://www.tiktok.com/@selfos1",
+    "https://www.pinterest.com/selfosapp/",
+    "https://linktr.ee/selfos.life"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Is SelfOS free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All eight modules, including every health tracker, work for free. The free tier has limits on volume: 2 goals, 20 active tasks, 2 habit categories, 1 shopping list, 3 custom dishes and 3 full reports. Premium removes the limits and adds automatic calendar sync, themes and backgrounds, with a 7-day free trial on the yearly plan."}},
+    {"@type": "Question", "name": "Which languages does SelfOS support?", "acceptedAnswer": {"@type": "Answer", "text": "English, Ukrainian and Russian. The app follows your phone's language."}},
+    {"@type": "Question", "name": "Does SelfOS work offline?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Core features work without a connection; the internet is only needed for food search and barcode scanning."}},
+    {"@type": "Question", "name": "Does SelfOS sync with Apple Health or Google Health Connect?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet. Health sync and home screen widgets are the next big things on the roadmap."}},
+    {"@type": "Question", "name": "Is this the SelfOS with the bonsai?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. This is the self-care tracker by Viktoriia Smyrnova with the bonsai on the home screen. There are other apps with a similar name."}}
+  ]
+}
+</script>
+<style>
+  :root {
+    --bg: #e4ede8;
+    --surface: #ffffff;
+    --ink: #0b1210;
+    --ink-soft: #2f3b36;
+    --muted: #5c6b64;
+    --line: rgba(11,18,16,0.12);
+    --hero-a: rgba(205,219,211,0.86);
+    --hero-b: rgba(207,220,213,0.86);
+    --cta-a: rgba(207,220,213,0.86);
+    --cta-b: rgba(191,210,200,0.86);
+    --nav-bg: rgba(228,237,232,0.85);
+    --btn-bg: #0b1210;
+    --btn-fg: #ffffff;
+    --btn-hover: #1c2621;
+    --ghost-line: rgba(11,18,16,0.25);
+    --ghost-hover: rgba(11,18,16,0.06);
+    --card: #0d1411;
+    --mint: #a7f3d0;
+    --emerald: #10b981;
+    --shadow: rgba(0,0,0,0.12);
+    --tile: rgba(255,255,255,0.55);
+    --tile-line: rgba(11,18,16,0.08);
+    --max: 1120px;
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b1210;
+    --surface: #141d18;
+    --ink: #e8efeb;
+    --ink-soft: #cfd9d3;
+    --muted: #a9b8b0;
+    --line: rgba(255,255,255,0.1);
+    --hero-a: rgba(24,35,30,0.82);
+    --hero-b: rgba(15,23,20,0.82);
+    --cta-a: rgba(15,23,20,0.82);
+    --cta-b: rgba(24,35,30,0.82);
+    --nav-bg: rgba(11,18,16,0.85);
+    --btn-bg: #e8efeb;
+    --btn-fg: #0b1210;
+    --btn-hover: #ffffff;
+    --ghost-line: rgba(232,239,235,0.3);
+    --ghost-hover: rgba(232,239,235,0.08);
+    --shadow: rgba(0,0,0,0.5);
+    --tile: rgba(255,255,255,0.03);
+    --tile-line: rgba(255,255,255,0.07);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    transition: background .2s ease, color .2s ease;
+  }
+  .serif { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-weight: 600; letter-spacing: -0.01em; }
+  a { color: inherit; }
+  img, video { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+  /* nav */
+  .nav { position: sticky; top: 0; z-index: 10; background: var(--nav-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 62px; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600; flex: none; }
+  .brand img { width: 30px; height: 30px; border-radius: 8px; }
+  .menu { display: flex; gap: 22px; font-size: 15px; }
+  .menu a { text-decoration: none; color: var(--ink-soft); }
+  .menu a:hover { color: var(--ink); }
+  .nav-right { display: flex; align-items: center; gap: 10px; flex: none; }
+  .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+  .lang button { background: none; border: 0; padding: 6px 11px; cursor: pointer; color: var(--muted); font: inherit; font-size: 13px; }
+  .lang button.on { background: var(--btn-bg); color: var(--btn-fg); }
+  .theme { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: none; color: var(--ink); cursor: pointer; display: grid; place-items: center; }
+  .theme svg { width: 17px; height: 17px; }
+  .theme .sun { display: none; }
+  :root[data-theme="dark"] .theme .sun { display: block; }
+  :root[data-theme="dark"] .theme .moon { display: none; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 15px; border: 1px solid transparent; transition: transform .15s ease, background .15s ease; cursor: pointer; }
+  .btn:active { transform: scale(.98); }
+  .btn-dark { background: var(--btn-bg); color: var(--btn-fg); }
+  .btn-dark:hover { background: var(--btn-hover); }
+  .btn-ghost { background: transparent; border-color: var(--ghost-line); color: var(--ink); }
+  .btn-ghost:hover { background: var(--ghost-hover); }
+  .btn-sm { padding: 8px 14px; font-size: 14px; }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+
+  /* hero */
+  .hero { background: linear-gradient(180deg, var(--hero-a) 0%, var(--hero-b) 100%); overflow: hidden; }
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 32px; align-items: center; padding-top: 64px; padding-bottom: 64px; }
+  .eyebrow { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 18px; }
+  h1 { font-size: clamp(42px, 6.5vw, 82px); line-height: 1.02; color: #fff; text-shadow: 0 2px 20px rgba(0,0,0,0.08); margin-bottom: 20px; }
+  .lead { font-size: clamp(17px, 1.6vw, 20px); color: var(--ink-soft); max-width: 520px; margin-bottom: 28px; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 14px; }
+  .fine { font-size: 13px; color: var(--ink-soft); }
+
+  /* phone frame */
+  .phone { justify-self: center; width: min(320px, 86%); aspect-ratio: 9 / 19.5; position: relative; background: #0a0a0a; border-radius: 52px; padding: 12px; box-shadow: 0 0 0 2px #2a2f2d, 0 0 0 4px #0d0f0e, 0 40px 70px var(--shadow); }
+  .phone::before { content: ""; position: absolute; top: 24px; left: 50%; transform: translateX(-50%); width: 34%; height: 28px; background: #000; border-radius: 999px; z-index: 2; }
+  .phone .screen { width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #000; }
+  .phone video, .phone img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* sections */
+  section { padding: 72px 0; }
+  h2 { font-size: clamp(30px, 4vw, 46px); line-height: 1.1; margin-bottom: 12px; }
+  .sub { color: var(--muted); font-size: 17px; max-width: 620px; margin-bottom: 36px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .group-label { grid-column: 1 / -1; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 10px 0 -4px; }
+  .group-label:first-child { margin-top: 0; }
+  .tile { position: relative; overflow: hidden; background: var(--tile); border: 1px solid var(--tile-line); border-radius: 18px; padding: 20px 18px; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+  .tile::before { content: ""; position: absolute; inset: 0; background: radial-gradient(140px 110px at 36px 36px, rgba(16,185,129,.10), transparent 70%); pointer-events: none; }
+  .tile:hover { transform: translateY(-3px); border-color: rgba(16,185,129,.38); box-shadow: 0 10px 24px var(--shadow); }
+  .tile .ic { position: relative; width: 38px; height: 38px; border-radius: 12px; background: var(--card); color: var(--mint); display: grid; place-items: center; margin-bottom: 14px; box-shadow: 0 0 0 1px rgba(16,185,129,.12); transition: box-shadow .2s ease; }
+  .tile:hover .ic { box-shadow: 0 0 0 1px rgba(16,185,129,.4), 0 0 18px rgba(16,185,129,.35); }
+  .tile .ic svg { width: 20px; height: 20px; }
+  .tile h3 { font-size: 16px; margin-bottom: 4px; }
+  .tile p { font-size: 14px; color: var(--muted); }
+
+  /* bonsai (always dark) */
+  .bonsai { background: var(--card); color: #e8efeb; }
+  .bonsai .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .bonsai h2 { color: #fff; }
+  .bonsai .sub { color: #a9b8b0; margin-bottom: 22px; }
+  .stages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .stages figure { background: #000; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
+  .stages .pic { aspect-ratio: 1 / 1; overflow: hidden; }
+  .stages .pic img { width: 100%; height: 100%; object-fit: cover; }
+  .stages figure:first-child .pic img { transform: translateY(22%) scale(1.12); transform-origin: center bottom; }
+  .stages figcaption { font-size: 12px; color: #a9b8b0; text-align: center; padding: 8px 6px 10px; }
+  .pill { display: inline-block; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--mint); border: 1px solid rgba(167,243,208,0.35); border-radius: 999px; padding: 5px 10px; margin-bottom: 16px; }
+  .bonsai ul { list-style: none; display: grid; gap: 10px; color: #cfd9d3; font-size: 15px; }
+  .bonsai li { padding-left: 22px; position: relative; }
+  .bonsai li::before { content: ""; position: absolute; left: 0; top: 9px; width: 9px; height: 9px; border-radius: 50%; background: var(--emerald); }
+
+  /* gallery */
+  .rail { display: flex; gap: 16px; overflow-x: auto; max-width: var(--max); margin: 0 auto; padding: 6px 20px 18px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+  .rail::-webkit-scrollbar { height: 8px; }
+  .rail::-webkit-scrollbar-thumb { background: var(--ghost-line); border-radius: 8px; }
+  .shot { flex: 0 0 240px; scroll-snap-align: start; }
+  .shot img { border-radius: 22px; box-shadow: 0 14px 30px var(--shadow); }
+  .shot p { font-size: 13px; color: var(--muted); text-align: center; margin-top: 10px; }
+
+  /* privacy */
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .note { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+  .note h3 { font-size: 18px; margin-bottom: 8px; }
+  .note p { color: var(--muted); font-size: 15px; }
+
+  /* faq */
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; margin-bottom: 10px; }
+  summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--muted); font-size: 20px; line-height: 1; }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--muted); font-size: 15px; margin-top: 10px; }
+
+  /* creator note */
+  .note-section { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .note-section .wrap { max-width: 760px; text-align: center; }
+  .note-section .sub { margin: 0 auto 34px; }
+  .letter { text-align: left; background: var(--bg); border: 1px solid var(--line); border-radius: 22px; padding: 30px 32px; font-size: 17px; color: var(--ink-soft); }
+  .letter p { margin-bottom: 14px; }
+  .letter .sig { font-family: "Playfair Display", Georgia, serif; font-size: 20px; color: var(--ink); margin: 6px 0 0; }
+  .byline { font-size: 14px; color: var(--muted); margin-top: 22px; }
+  .byline a { color: var(--ink); }
+  #fireflies { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: .9; }
+  .hero, section, footer { position: relative; z-index: 1; }
+  :root[data-theme="light"] #fireflies { opacity: .55; }
+  @media (prefers-reduced-motion: reduce) { #fireflies { display: none; } }
+
+  /* about + cta */
+  .about { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .about .wrap { max-width: 760px; }
+  .about p { color: var(--ink-soft); font-size: 17px; }
+  .cta { background: linear-gradient(180deg, var(--cta-a) 0%, var(--cta-b) 100%); text-align: center; }
+  .cta h2 { color: #fff; }
+  .cta .stores { justify-content: center; }
+
+  /* footer */
+  footer { background: var(--card); color: #a9b8b0; font-size: 14px; padding: 36px 0; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: center; justify-content: space-between; }
+  footer a { color: #cfd9d3; text-decoration: none; }
+  footer a:hover { color: #fff; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+
+  @media (max-width: 960px) { .menu { display: none; } }
+  @media (max-width: 860px) {
+    .hero .wrap { grid-template-columns: 1fr; padding-top: 40px; padding-bottom: 48px; }
+    .phone { width: min(280px, 78%); margin-top: 16px; }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .bonsai .wrap { grid-template-columns: 1fr; }
+    .two { grid-template-columns: 1fr; }
+    section { padding: 56px 0; }
+    .nav .btn-sm span { display: none; }
+  }
+  @media (max-width: 420px) {
+    .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .tile { padding: 16px 14px; }
+    .stages { gap: 6px; }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">📱</div>
-        <h1>SelfOS</h1>
-        <p class="tagline">Your Life's Operating System</p>
+<canvas id="fireflies" aria-hidden="true"></canvas>
 
-        <div class="links">
-            <a href="privacy-policy.html" class="privacy">
-                🛡️ Privacy Policy
-            </a>
-            <a href="terms-of-use.html" class="terms">
-                📄 Terms of Use
-            </a>
-        </div>
-
-        <p class="contact">
-            Contact: <a href="mailto:selfos.contact@gmail.com">selfos.contact@gmail.com</a>
-        </p>
-        <p class="contact" style="margin-top: 12px;">
-            <a href="https://platform.fatsecret.com">Powered by fatsecret Platform API</a>
-        </p>
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/apple-touch-icon.png" alt="SelfOS icon" width="30" height="30"> SelfOS</a>
+    <div class="menu">
+      <a href="#modules" data-i18n="menu.features">Features</a>
+      <a href="#bonsai" data-i18n="menu.bonsai">Bonsai</a>
+      <a href="#screens" data-i18n="menu.screens">Screens</a>
+      <a href="#privacy" data-i18n="menu.privacy">Privacy</a>
+      <a href="#faq" data-i18n="menu.faq">FAQ</a>
     </div>
+    <div class="nav-right">
+      <div class="lang" aria-label="Language">
+        <button type="button" data-lang="en" class="on">EN</button>
+        <button type="button" data-lang="uk">UA</button>
+      </div>
+      <button type="button" class="theme" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a class="btn btn-dark btn-sm smart-download" href="#download"><span data-i18n="nav.download">Download</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" data-i18n="hero.eyebrow">SelfOS · Self-Care Tracker</p>
+      <h1 class="serif" data-i18n="hero.h1">Care for every part of you</h1>
+      <p class="lead" data-i18n="hero.lead">Water, meals, sleep, activity, tasks, goals and habits - in one calm app. And a bonsai that grows from your daily self-care.</p>
+      <div class="stores" id="download">
+        <a class="btn btn-dark" href="https://apps.apple.com/app/apple-store/id6756428834?pt=128364304&ct=website&mt=8">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.37 12.6c0-2.4 1.97-3.55 2.06-3.6-1.12-1.64-2.86-1.86-3.48-1.89-1.48-.15-2.89.87-3.64.87-.75 0-1.9-.85-3.13-.83-1.61.02-3.09.94-3.92 2.38-1.67 2.9-.43 7.19 1.2 9.54.8 1.15 1.74 2.44 2.98 2.4 1.2-.05 1.65-.78 3.1-.78 1.45 0 1.86.78 3.13.75 1.29-.02 2.11-1.17 2.9-2.33.91-1.33 1.29-2.62 1.31-2.69-.03-.01-2.51-.96-2.51-3.82zM13.98 5.55c.66-.8 1.1-1.9.98-3.01-.95.04-2.1.63-2.78 1.43-.61.7-1.14 1.83-1 2.9 1.06.08 2.14-.54 2.8-1.32z"/></svg>
+          <span data-i18n="store.ios">Download on the App Store</span>
+        </a>
+        <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.selfos.app&referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding%26utm_campaign%3Dselfosapp_com">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.3 13.2 12l-9.6 9.7c-.3-.2-.5-.6-.5-1.1V3.4c0-.5.2-.9.5-1.1zm11 8.3L5.4 2.4l10.6 6.1-1.4 2.1zm0 2.8 1.4 2.1L5.4 21.6l9.2-8.2zm5.7-2.9c.7.4.7 1.6 0 2L17.6 14l-1.8-2 1.8-2 2.7 1.5z"/></svg>
+          <span data-i18n="store.android">Get it on Google Play</span>
+        </a>
+      </div>
+      <p class="fine" data-i18n="hero.fine">Free · no sign-up · your data stays on your phone</p>
+    </div>
+    <div class="phone" aria-hidden="true">
+      <div class="screen">
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" width="540" height="1170">
+          <source src="assets/hero.mp4" type="video/mp4">
+          <img src="assets/hero-poster.jpg" alt="SelfOS app preview" width="540" height="1170">
+        </video>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="modules">
+  <div class="wrap">
+    <h2 class="serif" data-i18n="mod.h2">One calm place for the whole day</h2>
+    <p class="sub" data-i18n="mod.sub">A self-care tracker and daily planner for iOS and Android: habit tracker, goal tracker, water, sleep, nutrition and activity trackers that talk to each other, instead of eight apps that don't.</p>
+    <div class="grid">
+      <p class="group-label" data-i18n="mod.g1">Care for you</p>
+      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></div><h3 data-i18n="mod.water">Water</h3><p data-i18n="mod.water.p">One tap per glass, a daily goal, gentle reminders.</p></div>
+      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/><path d="M10 2c1 .5 2 2 2 5"/></svg></div><h3 data-i18n="mod.food">Meals</h3><p data-i18n="mod.food.p">Food search, barcode scan, macros without the spreadsheet.</p></div>
+      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></div><h3 data-i18n="mod.sleep">Sleep</h3><p data-i18n="mod.sleep.p">Bedtime, wake-up, sleep debt for the week.</p></div>
+      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg></div><h3 data-i18n="mod.move">Activity</h3><p data-i18n="mod.move.p">Steps, workouts and minutes against the weekly guideline.</p></div>
+      <p class="group-label" data-i18n="mod.g2">Care for your day</p>
+      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg></div><h3 data-i18n="mod.tasks">Tasks</h3><p data-i18n="mod.tasks.p">A day on a timeline, with time slots, subtasks and repeats.</p></div>
+      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h3 data-i18n="mod.goals">Goals</h3><p data-i18n="mod.goals.p">Big dreams broken into steps, with deadlines and photos.</p></div>
+      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></div><h3 data-i18n="mod.habits">Habits</h3><p data-i18n="mod.habits.p">Flexible schedules, streaks and daily progress.</p></div>
+      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 11-1 9"/><path d="m19 11-4-7"/><path d="M2 11h20"/><path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4"/><path d="M4.5 15.5h15"/><path d="m5 11 4-7"/><path d="m9 11 1 9"/></svg></div><h3 data-i18n="mod.shop">Shopping lists</h3><p data-i18n="mod.shop.p">Groceries and more, by category, checked off in a tap.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bonsai" id="bonsai">
+  <div class="wrap">
+    <div>
+      <span class="pill" data-i18n="bon.pill">Self-care tree</span>
+      <h2 class="serif" data-i18n="bon.h2">Meet your bonsai</h2>
+      <p class="sub" data-i18n="bon.sub">It grows from the small things you do for yourself: a glass of water, a finished task, a night of sleep. It is the gentlest streak you will ever keep.</p>
+      <ul>
+        <li data-i18n="bon.l1">Six stages, from a sprout to a tree in bloom</li>
+        <li data-i18n="bon.l2">Every day with self-care adds to the streak</li>
+        <li data-i18n="bon.l3">Take a longer break and your bonsai gently resets, ready to grow again</li>
+        <li data-i18n="bon.l4">Share a card of your tree when it reaches a new stage</li>
+      </ul>
+    </div>
+    <div class="stages">
+      <figure><div class="pic"><img src="assets/bonsai/stage1-healthy.webp" alt="Bonsai, stage 1: a sprout" loading="lazy" width="512" height="512"></div><figcaption data-i18n="bon.c1">Day 1</figcaption></figure>
+      <figure><div class="pic"><img src="assets/bonsai/stage3-healthy.webp" alt="Bonsai, stage 3: a young tree" loading="lazy" width="512" height="512"></div><figcaption data-i18n="bon.c2">Growing</figcaption></figure>
+      <figure><div class="pic"><img src="assets/bonsai/stage6-healthy.webp" alt="Bonsai, stage 6: a tree in bloom" loading="lazy" width="512" height="512"></div><figcaption data-i18n="bon.c3">In bloom</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="screens">
+  <div class="wrap">
+    <h2 class="serif" data-i18n="gal.h2">A look inside</h2>
+    <p class="sub" data-i18n="gal.sub">Dark, quiet screens. Numbers you can read at a glance.</p>
+  </div>
+  <div class="rail">
+    <div class="shot"><img src="assets/shots/s1.jpg" alt="Home screen with water, nutrition, sleep and activity" loading="lazy" width="720" height="1560"><p data-i18n="gal.c1">Care for every part of you</p></div>
+    <div class="shot"><img src="assets/shots/s2.jpg" alt="Home screen with tasks, goals, shopping and habits" loading="lazy" width="720" height="1560"><p data-i18n="gal.c2">Health and focus in one place</p></div>
+    <div class="shot"><img src="assets/shots/s3.jpg" alt="Weekly progress and full data report export" loading="lazy" width="720" height="1560"><p data-i18n="gal.c3">See your progress, export your story</p></div>
+    <div class="shot"><img src="assets/shots/s4.jpg" alt="Nutrition: meals, macros and barcode scans" loading="lazy" width="720" height="1560"><p data-i18n="gal.c4">Eat easy: meals, macros, barcodes</p></div>
+    <div class="shot"><img src="assets/shots/s5.jpg" alt="Activity and sleep screens" loading="lazy" width="720" height="1560"><p data-i18n="gal.c5">Move and rest</p></div>
+    <div class="shot"><img src="assets/shots/s6.jpg" alt="Water tracker with daily goal" loading="lazy" width="720" height="1560"><p data-i18n="gal.c6">Drink well</p></div>
+    <div class="shot"><img src="assets/shots/s7.jpg" alt="Goals with steps, deadlines and photos" loading="lazy" width="720" height="1560"><p data-i18n="gal.c7">Goals with steps, deadlines and photos</p></div>
+    <div class="shot"><img src="assets/shots/s8.jpg" alt="Tasks on a timeline and habits with daily progress" loading="lazy" width="720" height="1560"><p data-i18n="gal.c8">Tasks and habits</p></div>
+    <div class="shot"><img src="assets/shots/s9.jpg" alt="Calendar: open any day and see everything" loading="lazy" width="720" height="1560"><p data-i18n="gal.c9">Open any day, see it all</p></div>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap">
+    <h2 class="serif" data-i18n="pr.h2">Private by design</h2>
+    <p class="sub" data-i18n="pr.sub">Self-care data is personal. SelfOS treats it that way.</p>
+    <div class="two">
+      <div class="note"><h3 data-i18n="pr.1h">Stays on your phone</h3><p data-i18n="pr.1p">Your tasks, meals, sleep and water live on your device. No sign-up, no ads, no ad tracking. Only anonymous usage statistics and crash reports, and you can switch them off in settings.</p></div>
+      <div class="note"><h3 data-i18n="pr.2h">Yours to take with you</h3><p data-i18n="pr.2p">Export or import all your data as a file from Profile, for backups or a new phone. And the Full Report gathers everything the app knows into one file, handy for your own analysis or your doctor.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2 class="serif" data-i18n="faq.h2">Questions</h2>
+    <p class="sub" data-i18n="faq.sub">Short answers to what people ask most.</p>
+    <details><summary data-i18n="faq.1q">Is SelfOS free?</summary><p data-i18n="faq.1a">Yes. All eight modules, including every health tracker, work for free. The free tier has limits on volume: 2 goals, 20 active tasks, 2 habit categories, 1 shopping list, 3 custom dishes and 3 full reports. Premium removes the limits and adds automatic calendar sync, themes and backgrounds, with a 7-day free trial on the yearly plan. Prices are shown in your store in your currency.</p></details>
+    <details><summary data-i18n="faq.2q">Which languages does it support?</summary><p data-i18n="faq.2a">English, Ukrainian and Russian. The app follows your phone's language.</p></details>
+    <details><summary data-i18n="faq.3q">Does it work offline?</summary><p data-i18n="faq.3a">Yes. Core features work without a connection. The internet is only needed for food search and barcode scanning.</p></details>
+    <details><summary data-i18n="faq.4q">Does it sync with Apple Health or Google Health Connect?</summary><p data-i18n="faq.4a">Not yet. Health sync and home screen widgets are the next big things on the roadmap.</p></details>
+    <details><summary data-i18n="faq.5q">Is this the SelfOS with the bonsai?</summary><p data-i18n="faq.5a">Yes. If you heard about SelfOS in a video or a thread, this is the one: the self-care tracker by Viktoriia Smyrnova, with the tree on the home screen. There are other apps with a similar name.</p></details>
+  </div>
+</section>
+
+<section class="note-section" id="note">
+  <div class="wrap">
+    <h2 class="serif" data-i18n="nt.h2">Not just an app - a space for your life 🌿</h2>
+    <p class="sub" data-i18n="nt.sub">For the days you're thriving and the days you're just surviving.</p>
+    <div class="letter">
+      <p data-i18n="nt.p1">SelfOS is my attempt to create a quiet place within the noise - a space where you can gather your thoughts, gently set your priorities, and regain a sense of control.</p>
+      <p data-i18n="nt.p2">We've grown used to living in a constant switching mode, losing focus and energy along the way. I created SelfOS as a personal operating system for life - calm, intuitive, and designed so that every task, thought, and goal has its place.</p>
+      <p data-i18n="nt.p3">May this space help you find a little more inner harmony and peace.</p>
+      <p data-i18n="nt.p4">Thank you for being here.</p>
+      <p class="sig serif" data-i18n="nt.sig">- Viktoriia</p>
+    </div>
+    <p class="byline" data-i18n="nt.by">Have an idea, a wish or found a bug? Write to <a href="mailto:selfos.contact@gmail.com">selfos.contact@gmail.com</a> - I read every message personally.</p>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2 class="serif" data-i18n="cta.h2">Plant your tree today</h2>
+    <p class="sub" style="margin: 0 auto 28px;" data-i18n="cta.sub">Free on iPhone and Android. No sign-up, no complicated setup - just start with yourself.</p>
+    <div class="stores">
+      <a class="btn btn-dark" href="https://apps.apple.com/app/apple-store/id6756428834?pt=128364304&ct=website&mt=8">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.37 12.6c0-2.4 1.97-3.55 2.06-3.6-1.12-1.64-2.86-1.86-3.48-1.89-1.48-.15-2.89.87-3.64.87-.75 0-1.9-.85-3.13-.83-1.61.02-3.09.94-3.92 2.38-1.67 2.9-.43 7.19 1.2 9.54.8 1.15 1.74 2.44 2.98 2.4 1.2-.05 1.65-.78 3.1-.78 1.45 0 1.86.78 3.13.75 1.29-.02 2.11-1.17 2.9-2.33.91-1.33 1.29-2.62 1.31-2.69-.03-.01-2.51-.96-2.51-3.82zM13.98 5.55c.66-.8 1.1-1.9.98-3.01-.95.04-2.1.63-2.78 1.43-.61.7-1.14 1.83-1 2.9 1.06.08 2.14-.54 2.8-1.32z"/></svg>
+        <span data-i18n="store.ios">Download on the App Store</span>
+      </a>
+      <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.selfos.app&referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding%26utm_campaign%3Dselfosapp_com">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.3 13.2 12l-9.6 9.7c-.3-.2-.5-.6-.5-1.1V3.4c0-.5.2-.9.5-1.1zm11 8.3L5.4 2.4l10.6 6.1-1.4 2.1zm0 2.8 1.4 2.1L5.4 21.6l9.2-8.2zm5.7-2.9c.7.4.7 1.6 0 2L17.6 14l-1.8-2 1.8-2 2.7 1.5z"/></svg>
+        <span data-i18n="store.android">Get it on Google Play</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a href="privacy-policy.html" data-i18n="ft.privacy">Privacy Policy</a>
+      <a href="terms-of-use.html" data-i18n="ft.terms">Terms of Use</a>
+      <a href="data-deletion.html" data-i18n="ft.delete">Data deletion</a>
+      <a href="mailto:selfos.contact@gmail.com" data-i18n="ft.contact">Contact</a>
+    </div>
+    <div class="links">
+      <a href="https://www.threads.com/@selfos.life" rel="me">Threads</a>
+      <a href="https://www.instagram.com/selfos.life/" rel="me">Instagram</a>
+      <a href="https://www.tiktok.com/@selfos1" rel="me">TikTok</a>
+      <a href="https://www.pinterest.com/selfosapp/" rel="me">Pinterest</a>
+      <a href="https://linktr.ee/selfos.life" rel="me">Linktree</a>
+    </div>
+    <div>© 2026 SelfOS · <a href="https://platform.fatsecret.com">Powered by fatsecret Platform API</a></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var uk = {
+    "menu.features": "Можливості", "menu.bonsai": "Бонсай", "menu.screens": "Екрани", "menu.privacy": "Приватність", "menu.faq": "Питання",
+    "nav.download": "Завантажити",
+    "hero.eyebrow": "SelfOS · застосунок для турботи про себе",
+    "hero.h1": "Турбота про кожну частину тебе",
+    "hero.lead": "Вода, їжа, сон, активність, завдання, цілі та звички - в одному спокійному застосунку. І бонсай, який росте від щоденної турботи про себе.",
+    "store.ios": "Завантажити в App Store",
+    "store.android": "Отримати в Google Play",
+    "hero.fine": "Безкоштовно · без реєстрації · дані залишаються на телефоні",
+    "mod.h2": "Твій день - в одному місці",
+    "mod.sub": "SelfOS поєднує турботу про себе та щоденне планування: звички, цілі, воду, сон, харчування й активність - замість купи окремих застосунків.",
+    "mod.g1": "Турбота про тебе",
+    "mod.g2": "Турбота про твій день",
+    "mod.water": "Вода", "mod.water.p": "Денна ціль, швидке відстеження та м'які нагадування.",
+    "mod.food": "Харчування", "mod.food.p": "Пошук продуктів, сканер штрихкодів і БЖВ без зайвих таблиць.",
+    "mod.sleep": "Сон", "mod.sleep.p": "Час сну й пробудження та баланс сну протягом тижня.",
+    "mod.move": "Активність", "mod.move.p": "Кроки, тренування та прогрес за тиждень.",
+    "mod.tasks": "Завдання", "mod.tasks.p": "Плануй день, додавай підзавдання та повторювані справи.",
+    "mod.goals": "Цілі", "mod.goals.p": "Великі цілі, розбиті на маленькі кроки, з дедлайнами та фото.",
+    "mod.habits": "Звички", "mod.habits.p": "Гнучкий розклад, серії та щоденний прогрес.",
+    "mod.shop": "Списки покупок", "mod.shop.p": "Усе потрібне за категоріями - відмічай покупки одним дотиком.",
+    "bon.pill": "Дерево турботи",
+    "bon.h2": "Познайомся зі своїм бонсаєм",
+    "bon.sub": "Він росте разом із турботою про себе: склянка води, виконане завдання, повноцінний сон - кожна маленька дія допомагає йому оживати.",
+    "bon.l1": "Шість стадій - від маленького паростка до дерева в цвіту",
+    "bon.l2": "Кожен день турботи про себе продовжує твою серію",
+    "bon.l3": "Після довшої перерви бонсай починає свій шлях знову",
+    "bon.l4": "Ділися своїм деревом, коли воно переходить на нову стадію",
+    "bon.c1": "День 1", "bon.c2": "Росте", "bon.c3": "У цвіту",
+    "gal.h2": "Зазирни всередину",
+    "gal.sub": "Темні тихі екрани. Цифри, які читаються з першого погляду.",
+    "gal.c1": "Турбота про кожну частину тебе",
+    "gal.c2": "Здоров'я і фокус в одному місці",
+    "gal.c3": "Прогрес і експорт твоєї історії",
+    "gal.c4": "Їжа, БЖВ, штрихкоди",
+    "gal.c5": "Рух і відпочинок",
+    "gal.c6": "Пий достатньо",
+    "gal.c7": "Цілі з кроками, дедлайнами та фото",
+    "gal.c8": "Задачі та звички",
+    "gal.c9": "Відкрий будь-який день - і побачиш усе",
+    "pr.h2": "Приватність за задумом",
+    "pr.sub": "Твої дані належать тільки тобі. SelfOS зберігає їх на твоєму пристрої та не використовує для реклами.",
+    "pr.1h": "Усе залишається на твоєму пристрої",
+    "pr.1p": "Твої завдання, харчування, сон і вода зберігаються локально. Без реєстрації, реклами та рекламного відстеження. Лише анонімна статистика використання й звіти про збої - їх можна вимкнути в налаштуваннях.",
+    "pr.2h": "Твої дані завжди з тобою",
+    "pr.2p": "Експортуй або імпортуй усі дані одним файлом - для резервної копії чи перенесення на новий телефон. А повний звіт збирає все, що знає SelfOS, в одному місці - для власного аналізу або щоб поділитися з лікарем.",
+    "faq.h2": "Запитання",
+    "faq.sub": "Короткі відповіді на те, що питають найчастіше.",
+    "faq.1q": "SelfOS безкоштовний?",
+    "faq.1a": "Так. Усі вісім модулів, включно з усіма модулями здоров'я, працюють безкоштовно. У безкоштовній версії є ліміти на обсяг: 2 цілі, 20 активних задач, 2 категорії звичок, 1 список покупок, 3 власні страви та 3 повні звіти. Преміум знімає ліміти й додає автоматичну синхронізацію календаря, теми та фони, з 7-денним безкоштовним пробним періодом на річному плані. Ціни показує твій магазин у твоїй валюті.",
+    "faq.2q": "Які мови підтримує?",
+    "faq.2a": "Українську, англійську та російську. Застосунок бере мову телефону.",
+    "faq.3q": "Працює без інтернету?",
+    "faq.3a": "Так. Основні функції працюють без з'єднання. Інтернет потрібен лише для пошуку продуктів і сканування штрихкодів.",
+    "faq.4q": "Синхронізується з Apple Health чи Google Health Connect?",
+    "faq.4a": "Поки ні. Синхронізація зі здоров'ям і віджети на головний екран - наступні великі пункти в планах.",
+    "faq.5q": "Це той SelfOS, що з бонсаєм?",
+    "faq.5a": "Так. Якщо ти чула про SelfOS у відео чи треді, це він: трекер турботи про себе від Вікторії Смирнової, з деревом на головному екрані. Є інші застосунки зі схожою назвою.",
+    "nt.h2": "Не просто застосунок - простір для твого життя 🌿",
+    "nt.sub": "Для днів, коли ти на підйомі, і для днів, коли просто тримаєшся.",
+    "nt.p1": "SelfOS - це моя спроба створити тихе місце серед шуму. Простір, де можна зібрати свої думки, дбайливо розставити пріоритети та повернути відчуття контролю.",
+    "nt.p2": "Ми звикли жити в режимі постійного перемикання, втрачаючи увагу й енергію. Я створила SelfOS як персональну операційну систему життя - спокійну, інтуїтивну, де кожне завдання, думка й ціль мають своє місце.",
+    "nt.p3": "Нехай у цьому просторі тобі буде легше знаходити внутрішню гармонію та спокій.",
+    "nt.p4": "Дякую, що ти тут.",
+    "nt.sig": "- Вікторія",
+    "nt.by": "Маєш ідею, побажання чи знайшов(-ла) помилку? Пиши на <a href=\"mailto:selfos.contact@gmail.com\">selfos.contact@gmail.com</a> - кожне повідомлення читаю особисто.",
+    "cta.h2": "Посади своє дерево сьогодні",
+    "cta.sub": "Безкоштовно на iPhone та Android. Без реєстрації й складних налаштувань - просто почни з себе.",
+    "ft.privacy": "Політика конфіденційності", "ft.terms": "Умови використання",
+    "ft.delete": "Видалення даних", "ft.contact": "Контакт"
+  };
+  var en = {};
+  var nodes = document.querySelectorAll("[data-i18n]");
+  nodes.forEach(function (n) { en[n.getAttribute("data-i18n")] = n.innerHTML; });
+
+  function setLang(lang) {
+    var dict = lang === "uk" ? uk : en;
+    nodes.forEach(function (n) {
+      var k = n.getAttribute("data-i18n");
+      if (dict[k] !== undefined) n.innerHTML = dict[k];
+    });
+    document.documentElement.lang = lang;
+    document.querySelectorAll(".lang button").forEach(function (b) {
+      b.classList.toggle("on", b.getAttribute("data-lang") === lang);
+    });
+    try { localStorage.setItem("selfos-lang", lang); } catch (e) {}
+  }
+  document.querySelectorAll(".lang button").forEach(function (b) {
+    b.addEventListener("click", function () { setLang(b.getAttribute("data-lang")); });
+  });
+  var saved = null;
+  try { saved = localStorage.getItem("selfos-lang"); } catch (e) {}
+  var q = (location.search.match(/[?&]lang=(uk|en)/) || [])[1];
+  var nav = (navigator.language || "").toLowerCase();
+  if (q) setLang(q);
+  else if (saved === "uk" || (!saved && nav.indexOf("uk") === 0)) setLang("uk");
+
+  // theme toggle
+  document.getElementById("theme-toggle").addEventListener("click", function () {
+    var cur = document.documentElement.getAttribute("data-theme");
+    var next = cur === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("selfos-theme", next); } catch (e) {}
+  });
+
+  // Smart download: iPhone/iPad/Mac -> App Store, everything else -> Google Play
+  var ua = navigator.userAgent || "";
+  var apple = /iPhone|iPad|iPod|Macintosh/.test(ua);
+  var href = apple
+    ? "https://apps.apple.com/app/apple-store/id6756428834?pt=128364304&ct=website_btn&mt=8"
+    : "https://play.google.com/store/apps/details?id=com.selfos.app&referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding_btn%26utm_campaign%3Dselfosapp_com";
+  document.querySelectorAll(".smart-download").forEach(function (a) { a.href = href; });
+
+  // Fireflies, like the ones around the bonsai. They live on the page, not on the screen:
+  // each one keeps its spot while you scroll.
+  var canvas = document.getElementById("fireflies");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (canvas && canvas.getContext && !reduce) {
+    var ctx = canvas.getContext("2d"), W, H, DOC, flies = [], dpr = Math.min(window.devicePixelRatio || 1, 2);
+    function mk() {
+      return { x: Math.random() * W, y: Math.random() * DOC, r: 1.2 + Math.random() * 1.8,
+               vx: (Math.random() - .5) * .25, vy: (Math.random() - .5) * .25,
+               ph: Math.random() * Math.PI * 2, sp: .01 + Math.random() * .02, hue: 95 + Math.random() * 60 };
+    }
+    function size() {
+      W = window.innerWidth; H = window.innerHeight;
+      DOC = Math.max(document.documentElement.scrollHeight, H);
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var want = Math.round((W < 700 ? 9 : 16) * (DOC / H));
+      while (flies.length < want) flies.push(mk());
+      flies.length = Math.min(flies.length, want);
+    }
+    size(); window.addEventListener("resize", size);
+    if (window.ResizeObserver) new ResizeObserver(size).observe(document.body);
+    var paused = false;
+    document.addEventListener("visibilitychange", function () { paused = document.hidden; });
+    function tick() {
+      if (!paused) {
+        var sy = window.scrollY || window.pageYOffset || 0;
+        ctx.clearRect(0, 0, W, H);
+        for (var i = 0; i < flies.length; i++) {
+          var f = flies[i];
+          f.ph += f.sp; f.x += f.vx + Math.sin(f.ph * 1.7) * .25; f.y += f.vy + Math.cos(f.ph) * .2;
+          if (f.x < -10) f.x = W + 10; if (f.x > W + 10) f.x = -10;
+          if (f.y < -10) f.y = DOC + 10; if (f.y > DOC + 10) f.y = -10;
+          var y = f.y - sy;
+          if (y < -20 || y > H + 20) continue;
+          var a = .35 + .65 * (Math.sin(f.ph) * .5 + .5);
+          var g = ctx.createRadialGradient(f.x, y, 0, f.x, y, f.r * 6);
+          g.addColorStop(0, "hsla(" + f.hue + ",90%,75%," + a + ")");
+          g.addColorStop(.4, "hsla(" + f.hue + ",90%,60%," + (a * .35) + ")");
+          g.addColorStop(1, "hsla(" + f.hue + ",90%,60%,0)");
+          ctx.fillStyle = g; ctx.beginPath(); ctx.arc(f.x, y, f.r * 6, 0, Math.PI * 2); ctx.fill();
+          ctx.fillStyle = "hsla(" + f.hue + ",100%,90%," + a + ")"; ctx.beginPath(); ctx.arc(f.x, y, f.r, 0, Math.PI * 2); ctx.fill();
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+    tick();
+  }
+})();
+</script>
 </body>
 </html>
