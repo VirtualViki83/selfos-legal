@@ -1,0 +1,692 @@
+<!DOCTYPE html><html lang="uk"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SelfOS - трекер турботи про себе і щоденний планер для iPhone та Android</title>
+<meta name="description" content="SelfOS - трекер турботи про себе і щоденний планер для iOS та Android: звички, цілі, вода, сон, харчування й активність в одному спокійному застосунку. І бонсай, який росте від щоденної турботи про себе.">
+<link rel="canonical" href="https://selfosapp.com/uk/">
+<link rel="alternate" hreflang="en" href="https://selfosapp.com/">
+<link rel="alternate" hreflang="uk" href="https://selfosapp.com/uk/">
+<link rel="alternate" hreflang="x-default" href="https://selfosapp.com/">
+<meta name="apple-itunes-app" content="app-id=6756428834">
+<meta name="p:domain_verify" content="7b3009bbe5d0ce336eff5dc797273fe0">
+<meta name="theme-color" content="#cddbd3">
+<!-- GoatCounter: a privacy-friendly counter (no cookies, no personal identifiers; see privacy policy §15).
+     Counts page views and, below, which store button was clicked. -->
+<script data-goatcounter="https://selfos.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SelfOS">
+<meta property="og:title" content="SelfOS - Турбота про кожну частину тебе">
+<meta property="og:description" content="Вода, їжа, сон, активність, завдання, цілі та звички - в одному спокійному застосунку. І бонсай, який росте від щоденної турботи про себе.">
+<meta property="og:url" content="https://selfosapp.com/uk/"><meta property="og:locale" content="uk_UA">
+<meta property="og:image" content="https://selfosapp.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet">
+<script>
+  // theme before paint: saved choice, else system
+  (function () {
+    var t = (location.search.match(/[?&]theme=(dark|light)/) || [])[1] || null;
+    if (!t) { try { t = localStorage.getItem("selfos-theme"); } catch (e) {} }
+    if (t !== "dark" && t !== "light") t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "SoftwareApplication",
+    "MobileApplication"
+  ],
+  "name": "SelfOS: Self-Care Tracker",
+  "alternateName": [
+    "SelfOS",
+    "SelfOS app",
+    "Селфос"
+  ],
+  "url": "https://selfosapp.com/uk/",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "HealthApplication",
+  "description": "SelfOS - трекер турботи про себе і щоденний планер для iOS та Android: звички, цілі, вода, сон, харчування й активність в одному спокійному застосунку. І бонсай, який росте від щоденної турботи про себе.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Viktoriia Smyrnova"
+  },
+  "inLanguage": [
+    "en",
+    "uk",
+    "ru"
+  ],
+  "downloadUrl": [
+    "https://apps.apple.com/app/apple-store/id6756428834?pt=128364304&ct=website&mt=8",
+    "https://play.google.com/store/apps/details?id=com.selfos.app"
+  ],
+  "sameAs": [
+    "https://www.threads.com/@selfos.life",
+    "https://www.instagram.com/selfos.life/",
+    "https://www.tiktok.com/@selfos1",
+    "https://www.pinterest.com/selfosapp/",
+    "https://linktr.ee/selfos.life"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "SelfOS безкоштовний?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Так. Усі вісім модулів, включно з усіма модулями здоров'я, працюють безкоштовно. У безкоштовній версії є ліміти на обсяг: 2 цілі, 20 активних задач, 2 категорії звичок, 1 список покупок, 3 власні страви та 3 повні звіти. Преміум знімає ліміти й додає автоматичну синхронізацію календаря, теми та фони, з 7-денним безкоштовним пробним періодом на річному плані. Ціни показує твій магазин у твоїй валюті."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Які мови підтримує?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Українську, англійську та російську. Застосунок бере мову телефону."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Працює без інтернету?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Так. Основні функції працюють без з'єднання. Інтернет потрібен лише для пошуку продуктів і сканування штрихкодів."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Синхронізується з Apple Health чи Google Health Connect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Так. Увімкни в Профіль → Годинники і трекери: сон, тренування і кроки з годинника чи трекера надходять через Apple Health або Health Connect - лише читання, і дані лишаються на твоєму пристрої. Віджети на головний екран теж є, безкоштовно."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Це той SelfOS, що з бонсаєм?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Так. Якщо ти чула про SelfOS у відео чи треді, це він: трекер турботи про себе від Вікторії Смирнової, з деревом на головному екрані. Є інші застосунки зі схожою назвою."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root {
+    --bg: #e4ede8;
+    --surface: #ffffff;
+    --ink: #0b1210;
+    --ink-soft: #2f3b36;
+    --muted: #5c6b64;
+    --line: rgba(11,18,16,0.12);
+    --hero-a: rgba(205,219,211,0.86);
+    --hero-b: rgba(207,220,213,0.86);
+    --cta-a: rgba(207,220,213,0.86);
+    --cta-b: rgba(191,210,200,0.86);
+    --nav-bg: rgba(228,237,232,0.85);
+    --btn-bg: #0b1210;
+    --btn-fg: #ffffff;
+    --btn-hover: #1c2621;
+    --ghost-line: rgba(11,18,16,0.25);
+    --ghost-hover: rgba(11,18,16,0.06);
+    --card: #0d1411;
+    --mint: #a7f3d0;
+    --emerald: #10b981;
+    --shadow: rgba(0,0,0,0.12);
+    --tile: rgba(255,255,255,0.55);
+    --tile-line: rgba(11,18,16,0.08);
+    --max: 1120px;
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b1210;
+    --surface: #141d18;
+    --ink: #e8efeb;
+    --ink-soft: #cfd9d3;
+    --muted: #a9b8b0;
+    --line: rgba(255,255,255,0.1);
+    --hero-a: rgba(24,35,30,0.82);
+    --hero-b: rgba(15,23,20,0.82);
+    --cta-a: rgba(15,23,20,0.82);
+    --cta-b: rgba(24,35,30,0.82);
+    --nav-bg: rgba(11,18,16,0.85);
+    --btn-bg: #e8efeb;
+    --btn-fg: #0b1210;
+    --btn-hover: #ffffff;
+    --ghost-line: rgba(232,239,235,0.3);
+    --ghost-hover: rgba(232,239,235,0.08);
+    --shadow: rgba(0,0,0,0.5);
+    --tile: rgba(255,255,255,0.03);
+    --tile-line: rgba(255,255,255,0.07);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    transition: background .2s ease, color .2s ease;
+  }
+  .serif { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-weight: 600; letter-spacing: -0.01em; }
+  a { color: inherit; }
+  img, video { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+  /* nav */
+  .nav { position: sticky; top: 0; z-index: 10; background: var(--nav-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 62px; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600; flex: none; }
+  .brand img { width: 30px; height: 30px; border-radius: 8px; }
+  .menu { display: flex; gap: 22px; font-size: 15px; }
+  .menu a { text-decoration: none; color: var(--ink-soft); }
+  .menu a:hover { color: var(--ink); }
+  .nav-right { display: flex; align-items: center; gap: 10px; flex: none; }
+  .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+  .lang button { background: none; border: 0; padding: 6px 11px; cursor: pointer; color: var(--muted); font: inherit; font-size: 13px; }
+  .lang button.on { background: var(--btn-bg); color: var(--btn-fg); }
+  .theme { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: none; color: var(--ink); cursor: pointer; display: grid; place-items: center; }
+  .theme svg { width: 17px; height: 17px; }
+  .theme .sun { display: none; }
+  :root[data-theme="dark"] .theme .sun { display: block; }
+  :root[data-theme="dark"] .theme .moon { display: none; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 15px; border: 1px solid transparent; transition: transform .15s ease, background .15s ease; cursor: pointer; }
+  .btn:active { transform: scale(.98); }
+  .btn-dark { background: var(--btn-bg); color: var(--btn-fg); }
+  .btn-dark:hover { background: var(--btn-hover); }
+  .btn-ghost { background: transparent; border-color: var(--ghost-line); color: var(--ink); }
+  .btn-ghost:hover { background: var(--ghost-hover); }
+  .btn-sm { padding: 8px 14px; font-size: 14px; }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+
+  /* hero */
+  .hero { background: linear-gradient(180deg, var(--hero-a) 0%, var(--hero-b) 100%); overflow: hidden; }
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 32px; align-items: center; padding-top: 64px; padding-bottom: 64px; }
+  .eyebrow { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 18px; }
+  h1 { font-size: clamp(42px, 6.5vw, 82px); line-height: 1.02; color: #fff; text-shadow: 0 2px 20px rgba(0,0,0,0.08); margin-bottom: 20px; }
+  .lead { font-size: clamp(17px, 1.6vw, 20px); color: var(--ink-soft); max-width: 520px; margin-bottom: 28px; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 14px; }
+  .fine { font-size: 13px; color: var(--ink-soft); }
+  .socials { display: flex; gap: 10px; margin-top: 18px; }
+  .socials a { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--ghost-line); display: grid; place-items: center; color: var(--ink); transition: transform .15s ease, border-color .15s ease, background .15s ease; }
+  .socials a:hover { transform: translateY(-2px); border-color: rgba(16,185,129,.6); background: var(--ghost-hover); }
+  .socials svg { width: 18px; height: 18px; }
+
+  /* phone frame */
+  .phone { justify-self: center; width: min(320px, 86%); aspect-ratio: 9 / 19.5; position: relative; background: #0a0a0a; border-radius: 52px; padding: 12px; box-shadow: 0 0 0 2px #2a2f2d, 0 0 0 4px #0d0f0e, 0 40px 70px var(--shadow); }
+  .phone::before { content: ""; position: absolute; top: 24px; left: 50%; transform: translateX(-50%); width: 34%; height: 28px; background: #000; border-radius: 999px; z-index: 2; }
+  .phone .screen { width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #000; }
+  .phone video, .phone img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* sections */
+  section { padding: 72px 0; }
+  h2 { font-size: clamp(30px, 4vw, 46px); line-height: 1.1; margin-bottom: 12px; }
+  .sub { color: var(--muted); font-size: 17px; max-width: 620px; margin-bottom: 36px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .group-label { grid-column: 1 / -1; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 10px 0 -4px; }
+  .group-label:first-child { margin-top: 0; }
+  .tile { position: relative; overflow: hidden; background: var(--tile); border: 1px solid var(--tile-line); border-radius: 18px; padding: 20px 18px; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+  .tile::before { content: ""; position: absolute; inset: 0; background: radial-gradient(140px 110px at 36px 36px, rgba(16,185,129,.10), transparent 70%); pointer-events: none; }
+  .tile:hover { transform: translateY(-3px); border-color: rgba(16,185,129,.38); box-shadow: 0 10px 24px var(--shadow); }
+  .tile .ic { position: relative; width: 38px; height: 38px; border-radius: 12px; background: var(--card); color: var(--mint); display: grid; place-items: center; margin-bottom: 14px; box-shadow: 0 0 0 1px rgba(16,185,129,.12); transition: box-shadow .2s ease; }
+  .tile:hover .ic { box-shadow: 0 0 0 1px rgba(16,185,129,.4), 0 0 18px rgba(16,185,129,.35); }
+  .tile .ic svg { width: 20px; height: 20px; }
+  .tile h3 { font-size: 16px; margin-bottom: 4px; }
+  .tile p { font-size: 14px; color: var(--muted); }
+
+  /* bonsai (always dark) */
+  .bonsai { background: var(--card); color: #e8efeb; }
+  .bonsai .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .bonsai h2 { color: #fff; }
+  .bonsai .sub { color: #a9b8b0; margin-bottom: 22px; }
+  .stages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .stages figure { background: #000; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
+  .stages .pic { aspect-ratio: 1 / 1; overflow: hidden; }
+  .stages .pic img { width: 100%; height: 100%; object-fit: cover; }
+  .stages figure:first-child .pic img { transform: translateY(22%) scale(1.12); transform-origin: center bottom; }
+  .stages figcaption { font-size: 12px; color: #a9b8b0; text-align: center; padding: 8px 6px 10px; }
+  .pill { display: inline-block; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--mint); border: 1px solid rgba(167,243,208,0.35); border-radius: 999px; padding: 5px 10px; margin-bottom: 16px; }
+  .bonsai ul { list-style: none; display: grid; gap: 10px; color: #cfd9d3; font-size: 15px; }
+  .bonsai li { padding-left: 22px; position: relative; }
+  .bonsai li::before { content: ""; position: absolute; left: 0; top: 9px; width: 9px; height: 9px; border-radius: 50%; background: var(--emerald); }
+
+  /* gallery */
+  .rail { display: flex; gap: 16px; overflow-x: auto; max-width: var(--max); margin: 0 auto; padding: 6px 20px 18px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+  .rail::-webkit-scrollbar { height: 8px; }
+  .rail::-webkit-scrollbar-thumb { background: var(--ghost-line); border-radius: 8px; }
+  .shot { flex: 0 0 240px; scroll-snap-align: start; }
+  .shot img { border-radius: 22px; box-shadow: 0 14px 30px var(--shadow); }
+  .shot p { font-size: 13px; color: var(--muted); text-align: center; margin-top: 10px; }
+
+  /* privacy */
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .note { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+  .note h3 { font-size: 18px; margin-bottom: 8px; }
+  .note p { color: var(--muted); font-size: 15px; }
+
+  /* faq */
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; margin-bottom: 10px; }
+  summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--muted); font-size: 20px; line-height: 1; }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--muted); font-size: 15px; margin-top: 10px; }
+
+  /* creator note */
+  .note-section { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .note-section .wrap { max-width: 760px; text-align: center; }
+  .note-section .sub { margin: 0 auto 34px; }
+  .letter { text-align: left; background: var(--bg); border: 1px solid var(--line); border-radius: 22px; padding: 30px 32px; font-size: 17px; color: var(--ink-soft); }
+  .letter p { margin-bottom: 14px; }
+  .letter .sig { font-family: "Playfair Display", Georgia, serif; font-size: 20px; color: var(--ink); margin: 6px 0 0; }
+  .byline { font-size: 14px; color: var(--muted); margin-top: 22px; }
+  .byline a { color: var(--ink); }
+  #fireflies { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: .9; }
+  .hero, section, footer { position: relative; z-index: 1; }
+  :root[data-theme="light"] #fireflies { opacity: .55; }
+  @media (prefers-reduced-motion: reduce) { #fireflies { display: none; } }
+
+  /* about + cta */
+  .about { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .about .wrap { max-width: 760px; }
+  .about p { color: var(--ink-soft); font-size: 17px; }
+  .cta { background: linear-gradient(180deg, var(--cta-a) 0%, var(--cta-b) 100%); text-align: center; }
+  .cta h2 { color: #fff; }
+  .cta .stores { justify-content: center; }
+
+  /* footer */
+  footer { background: var(--card); color: #a9b8b0; font-size: 14px; padding: 36px 0; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: center; justify-content: space-between; }
+  footer a { color: #cfd9d3; text-decoration: none; }
+  footer a:hover { color: #fff; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+
+  @media (max-width: 960px) { .menu { display: none; } }
+  @media (max-width: 860px) {
+    .hero .wrap { grid-template-columns: 1fr; padding-top: 40px; padding-bottom: 48px; }
+    .phone { width: min(280px, 78%); margin-top: 16px; }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .bonsai .wrap { grid-template-columns: 1fr; }
+    .two { grid-template-columns: 1fr; }
+    section { padding: 56px 0; }
+    .nav .btn-sm span { display: none; }
+  }
+  @media (max-width: 420px) {
+    .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .tile { padding: 16px 14px; }
+    .stages { gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<canvas id="fireflies" aria-hidden="true"></canvas>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="/assets/apple-touch-icon.png" alt="SelfOS icon" width="30" height="30"> SelfOS</a>
+    <div class="menu">
+      <a href="#modules" data-i18n="menu.features">Можливості</a>
+      <a href="#bonsai" data-i18n="menu.bonsai">Бонсай</a>
+      <a href="#screens" data-i18n="menu.screens">Екрани</a>
+      <a href="#privacy" data-i18n="menu.privacy">Приватність</a>
+      <a href="#faq" data-i18n="menu.faq">Питання</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang" aria-label="Language">
+        <button type="button" data-lang="en" class="">EN</button>
+        <button type="button" data-lang="uk" class="on">UA</button>
+      </div>
+      <button type="button" class="theme" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+      </button>
+      <a class="btn btn-dark btn-sm smart-download" href="#download"><span data-i18n="nav.download">Завантажити</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" data-i18n="hero.eyebrow">SelfOS · застосунок для турботи про себе</p>
+      <h1 class="serif" data-i18n="hero.h1">Турбота про кожну частину тебе</h1>
+      <p class="lead" data-i18n="hero.lead">Вода, їжа, сон, активність, завдання, цілі та звички - в одному спокійному застосунку. І бонсай, який росте від щоденної турботи про себе.</p>
+      <div class="stores" id="download">
+        <a class="btn btn-dark" href="https://apps.apple.com/app/apple-store/id6756428834?pt=128364304&amp;ct=website&amp;mt=8">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.37 12.6c0-2.4 1.97-3.55 2.06-3.6-1.12-1.64-2.86-1.86-3.48-1.89-1.48-.15-2.89.87-3.64.87-.75 0-1.9-.85-3.13-.83-1.61.02-3.09.94-3.92 2.38-1.67 2.9-.43 7.19 1.2 9.54.8 1.15 1.74 2.44 2.98 2.4 1.2-.05 1.65-.78 3.1-.78 1.45 0 1.86.78 3.13.75 1.29-.02 2.11-1.17 2.9-2.33.91-1.33 1.29-2.62 1.31-2.69-.03-.01-2.51-.96-2.51-3.82zM13.98 5.55c.66-.8 1.1-1.9.98-3.01-.95.04-2.1.63-2.78 1.43-.61.7-1.14 1.83-1 2.9 1.06.08 2.14-.54 2.8-1.32z"></path></svg>
+          <span data-i18n="store.ios">Завантажити в App Store</span>
+        </a>
+        <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.selfos.app&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding%26utm_campaign%3Dselfosapp_com">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.3 13.2 12l-9.6 9.7c-.3-.2-.5-.6-.5-1.1V3.4c0-.5.2-.9.5-1.1zm11 8.3L5.4 2.4l10.6 6.1-1.4 2.1zm0 2.8 1.4 2.1L5.4 21.6l9.2-8.2zm5.7-2.9c.7.4.7 1.6 0 2L17.6 14l-1.8-2 1.8-2 2.7 1.5z"></path></svg>
+          <span data-i18n="store.android">Отримати в Google Play</span>
+        </a>
+      </div>
+      <p class="fine" data-i18n="hero.fine">Безкоштовно · без реєстрації · дані залишаються на телефоні</p>
+      <div class="socials" aria-label="SelfOS on social media">
+        <a href="https://www.threads.com/@selfos.life" title="Threads" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"></path></svg></a>
+        <a href="https://www.instagram.com/selfos.life/" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"></circle></svg></a>
+        <a href="https://www.tiktok.com/@selfos1" title="TikTok" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg></a>
+        <a href="https://www.pinterest.com/selfosapp/" title="Pinterest" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"></path></svg></a>
+        <a href="mailto:selfos.contact@gmail.com" title="Email" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m3 7 9 6 9-6"></path></svg></a>
+      </div>
+    </div>
+    <div class="phone" aria-hidden="true">
+      <div class="screen">
+        <video autoplay="" muted="" loop="" playsinline="" preload="metadata" poster="/assets/hero-poster.jpg" width="540" height="1170">
+          <source src="/assets/hero.mp4" type="video/mp4">
+          <img src="/assets/hero-poster.jpg" alt="SelfOS app preview" width="540" height="1170">
+        </video>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="modules">
+  <div class="wrap">
+    <h2 class="serif" data-i18n="mod.h2">Твій день - в одному місці</h2>
+    <p class="sub" data-i18n="mod.sub">SelfOS поєднує турботу про себе та щоденне планування: звички, цілі, воду, сон, харчування й активність - замість купи окремих застосунків.</p>
+    <div class="grid">
+      <p class="group-label" data-i18n="mod.g1">Турбота про тебе</p>
+      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"></path></svg></div><h3 data-i18n="mod.water">Вода</h3><p data-i18n="mod.water.p">Денна ціль, швидке відстеження та м'які нагадування.</p></div>
+      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"></path><path d="M10 2c1 .5 2 2 2 5"></path></svg></div><h3 data-i18n="mod.food">Харчування</h3><p data-i18n="mod.food.p">Пошук продуктів, сканер штрихкодів і БЖВ без зайвих таблиць.</p></div>
+      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></div><h3 data-i18n="mod.sleep">Сон</h3><p data-i18n="mod.sleep.p">Час сну й пробудження та баланс сну протягом тижня.</p></div>
+      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"></path><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"></path><path d="M16 17h4"></path><path d="M4 13h4"></path></svg></div><h3 data-i18n="mod.move">Активність</h3><p data-i18n="mod.move.p">Кроки, тренування та прогрес за тиждень.</p></div>
+      <p class="group-label" data-i18n="mod.g2">Турбота про твій день</p>
+      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4"></path><path d="m3 7 2 2 4-4"></path><path d="M13 6h8"></path><path d="M13 12h8"></path><path d="M13 18h8"></path></svg></div><h3 data-i18n="mod.tasks">Завдання</h3><p data-i18n="mod.tasks.p">Плануй день, додавай підзавдання та повторювані справи.</p></div>
+      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div><h3 data-i18n="mod.goals">Цілі</h3><p data-i18n="mod.goals.p">Великі цілі, розбиті на маленькі кроки, з дедлайнами та фото.</p></div>
+      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg></div><h3 data-i18n="mod.habits">Звички</h3><p data-i18n="mod.habits.p">Гнучкий розклад, серії та щоденний прогрес.</p></div>
+      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 11-1 9"></path><path d="m19 11-4-7"></path><path d="M2 11h20"></path><path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4"></path><path d="M4.5 15.5h15"></path><path d="m5 11 4-7"></path><path d="m9 11 1 9"></path></svg></div><h3 data-i18n="mod.shop">Списки покупок</h3><p data-i18n="mod.shop.p">Усе потрібне за категоріями - відмічай покупки одним дотиком.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bonsai" id="bonsai">
+  <div class="wrap">
+    <div>
+      <span class="pill" data-i18n="bon.pill">Дерево турботи</span>
+      <h2 class="serif" data-i18n="bon.h2">Познайомся зі своїм бонсаєм</h2>
+      <p class="sub" data-i18n="bon.sub">Він росте разом із турботою про себе: склянка води, виконане завдання, повноцінний сон - кожна маленька дія допомагає йому оживати.</p>
+      <ul>
+        <li data-i18n="bon.l1">Шість стадій - від маленького паростка до дерева в цвіту</li>
+        <li data-i18n="bon.l2">Кожен день турботи про себе продовжує твою серію</li>
+        <li data-i18n="bon.l3">Після довшої перерви бонсай починає свій шлях знову</li>
+        <li data-i18n="bon.l4">Ділися своїм деревом, коли воно переходить на нову стадію</li>
+      </ul>
+    </div>
+    <div class="stages">
+      <figure><div class="pic"><img src="/assets/bonsai/stage1-healthy.webp" alt="Bonsai, stage 1: a sprout" loading="lazy" width="512" height="512"></div><figcaption data-i18n="bon.c1">День 1</figcaption></figure>
+      <figure><div class="pic"><img src="/assets/bonsai/stage3-healthy.webp" alt="Bonsai, stage 3: a young tree" loading="lazy" width="512" height="512"></div><figcaption data-i18n="bon.c2">Росте</figcaption></figure>
+      <figure><div class="pic"><img src="/assets/bonsai/stage6-healthy.webp" alt="Bonsai, stage 6: a tree in bloom" loading="lazy" width="512" height="512"></div><figcaption data-i18n="bon.c3">У цвіту</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="screens">
+  <div class="wrap">
+    <h2 class="serif" data-i18n="gal.h2">Зазирни всередину</h2>
+    <p class="sub" data-i18n="gal.sub">Темні тихі екрани. Цифри, які читаються з першого погляду.</p>
+  </div>
+  <div class="rail">
+    <div class="shot"><img src="/assets/shots/s1.jpg" alt="Home screen with water, nutrition, sleep and activity" loading="lazy" width="720" height="1560"><p data-i18n="gal.c1">Турбота про кожну частину тебе</p></div>
+    <div class="shot"><img src="/assets/shots/s2.jpg" alt="Home screen with tasks, goals, shopping and habits" loading="lazy" width="720" height="1560"><p data-i18n="gal.c2">Здоров'я і фокус в одному місці</p></div>
+    <div class="shot"><img src="/assets/shots/s3.jpg" alt="Weekly progress and full data report export" loading="lazy" width="720" height="1560"><p data-i18n="gal.c3">Прогрес і експорт твоєї історії</p></div>
+    <div class="shot"><img src="/assets/shots/s4.jpg" alt="Nutrition: meals, macros and barcode scans" loading="lazy" width="720" height="1560"><p data-i18n="gal.c4">Їжа, БЖВ, штрихкоди</p></div>
+    <div class="shot"><img src="/assets/shots/s5.jpg" alt="Activity and sleep screens" loading="lazy" width="720" height="1560"><p data-i18n="gal.c5">Рух і відпочинок</p></div>
+    <div class="shot"><img src="/assets/shots/s6.jpg" alt="Water tracker with daily goal" loading="lazy" width="720" height="1560"><p data-i18n="gal.c6">Пий достатньо</p></div>
+    <div class="shot"><img src="/assets/shots/s7.jpg" alt="Goals with steps, deadlines and photos" loading="lazy" width="720" height="1560"><p data-i18n="gal.c7">Цілі з кроками, дедлайнами та фото</p></div>
+    <div class="shot"><img src="/assets/shots/s8.jpg" alt="Tasks on a timeline and habits with daily progress" loading="lazy" width="720" height="1560"><p data-i18n="gal.c8">Задачі та звички</p></div>
+    <div class="shot"><img src="/assets/shots/s9.jpg" alt="Calendar: open any day and see everything" loading="lazy" width="720" height="1560"><p data-i18n="gal.c9">Відкрий будь-який день - і побачиш усе</p></div>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap">
+    <h2 class="serif" data-i18n="pr.h2">Приватність за задумом</h2>
+    <p class="sub" data-i18n="pr.sub">Твої дані належать тільки тобі. SelfOS зберігає їх на твоєму пристрої та не використовує для реклами.</p>
+    <div class="two">
+      <div class="note"><h3 data-i18n="pr.1h">Усе залишається на твоєму пристрої</h3><p data-i18n="pr.1p">Твої завдання, харчування, сон і вода зберігаються локально. Без реєстрації, реклами та рекламного відстеження. Лише анонімна статистика використання й звіти про збої - їх можна вимкнути в налаштуваннях.</p></div>
+      <div class="note"><h3 data-i18n="pr.2h">Твої дані завжди з тобою</h3><p data-i18n="pr.2p">Експортуй або імпортуй усі дані одним файлом - для резервної копії чи перенесення на новий телефон. А повний звіт збирає все, що знає SelfOS, в одному місці - для власного аналізу або щоб поділитися з лікарем.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2 class="serif" data-i18n="faq.h2">Запитання</h2>
+    <p class="sub" data-i18n="faq.sub">Короткі відповіді на те, що питають найчастіше.</p>
+    <details><summary data-i18n="faq.1q">SelfOS безкоштовний?</summary><p data-i18n="faq.1a">Так. Усі вісім модулів, включно з усіма модулями здоров'я, працюють безкоштовно. У безкоштовній версії є ліміти на обсяг: 2 цілі, 20 активних задач, 2 категорії звичок, 1 список покупок, 3 власні страви та 3 повні звіти. Преміум знімає ліміти й додає автоматичну синхронізацію календаря, теми та фони, з 7-денним безкоштовним пробним періодом на річному плані. Ціни показує твій магазин у твоїй валюті.</p></details>
+    <details><summary data-i18n="faq.2q">Які мови підтримує?</summary><p data-i18n="faq.2a">Українську, англійську та російську. Застосунок бере мову телефону.</p></details>
+    <details><summary data-i18n="faq.3q">Працює без інтернету?</summary><p data-i18n="faq.3a">Так. Основні функції працюють без з'єднання. Інтернет потрібен лише для пошуку продуктів і сканування штрихкодів.</p></details>
+    <details><summary data-i18n="faq.4q">Синхронізується з Apple Health чи Google Health Connect?</summary><p data-i18n="faq.4a">Так. Увімкни в Профіль → Годинники і трекери: сон, тренування і кроки з годинника чи трекера надходять через Apple Health або Health Connect - лише читання, і дані лишаються на твоєму пристрої. Віджети на головний екран теж є, безкоштовно.</p></details>
+    <details><summary data-i18n="faq.5q">Це той SelfOS, що з бонсаєм?</summary><p data-i18n="faq.5a">Так. Якщо ти чула про SelfOS у відео чи треді, це він: трекер турботи про себе від Вікторії Смирнової, з деревом на головному екрані. Є інші застосунки зі схожою назвою.</p></details>
+  </div>
+</section>
+
+<section class="note-section" id="note">
+  <div class="wrap">
+    <h2 class="serif" data-i18n="nt.h2">Не просто застосунок - простір для твого життя 🌿</h2>
+    <p class="sub" data-i18n="nt.sub">Для днів, коли ти на підйомі, і для днів, коли просто тримаєшся.</p>
+    <div class="letter">
+      <p data-i18n="nt.p1">SelfOS - це моя спроба створити тихе місце серед шуму. Простір, де можна зібрати свої думки, дбайливо розставити пріоритети та повернути відчуття контролю.</p>
+      <p data-i18n="nt.p2">Ми звикли жити в режимі постійного перемикання, втрачаючи увагу й енергію. Я створила SelfOS як персональну операційну систему життя - спокійну, інтуїтивну, де кожне завдання, думка й ціль мають своє місце.</p>
+      <p data-i18n="nt.p3">Нехай у цьому просторі тобі буде легше знаходити внутрішню гармонію та спокій.</p>
+      <p data-i18n="nt.p4">Дякую, що ти тут.</p>
+      <p class="sig serif" data-i18n="nt.sig">- Вікторія</p>
+    </div>
+    <p class="byline" data-i18n="nt.by">Маєш ідею, побажання чи знайшов(-ла) помилку? Пиши на <a href="mailto:selfos.contact@gmail.com">selfos.contact@gmail.com</a> - кожне повідомлення читаю особисто.</p>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2 class="serif" data-i18n="cta.h2">Посади своє дерево сьогодні</h2>
+    <p class="sub" style="margin: 0 auto 28px;" data-i18n="cta.sub">Безкоштовно на iPhone та Android. Без реєстрації й складних налаштувань - просто почни з себе.</p>
+    <div class="stores">
+      <a class="btn btn-dark" href="https://apps.apple.com/app/apple-store/id6756428834?pt=128364304&amp;ct=website&amp;mt=8">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.37 12.6c0-2.4 1.97-3.55 2.06-3.6-1.12-1.64-2.86-1.86-3.48-1.89-1.48-.15-2.89.87-3.64.87-.75 0-1.9-.85-3.13-.83-1.61.02-3.09.94-3.92 2.38-1.67 2.9-.43 7.19 1.2 9.54.8 1.15 1.74 2.44 2.98 2.4 1.2-.05 1.65-.78 3.1-.78 1.45 0 1.86.78 3.13.75 1.29-.02 2.11-1.17 2.9-2.33.91-1.33 1.29-2.62 1.31-2.69-.03-.01-2.51-.96-2.51-3.82zM13.98 5.55c.66-.8 1.1-1.9.98-3.01-.95.04-2.1.63-2.78 1.43-.61.7-1.14 1.83-1 2.9 1.06.08 2.14-.54 2.8-1.32z"></path></svg>
+        <span data-i18n="store.ios">Завантажити в App Store</span>
+      </a>
+      <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.selfos.app&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding%26utm_campaign%3Dselfosapp_com">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.3 13.2 12l-9.6 9.7c-.3-.2-.5-.6-.5-1.1V3.4c0-.5.2-.9.5-1.1zm11 8.3L5.4 2.4l10.6 6.1-1.4 2.1zm0 2.8 1.4 2.1L5.4 21.6l9.2-8.2zm5.7-2.9c.7.4.7 1.6 0 2L17.6 14l-1.8-2 1.8-2 2.7 1.5z"></path></svg>
+        <span data-i18n="store.android">Отримати в Google Play</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a href="/privacy-policy.html" data-i18n="ft.privacy">Політика конфіденційності</a>
+      <a href="/terms-of-use.html" data-i18n="ft.terms">Умови використання</a>
+      <a href="/data-deletion.html" data-i18n="ft.delete">Видалення даних</a>
+      <a href="mailto:selfos.contact@gmail.com" data-i18n="ft.contact">Контакт</a>
+    </div>
+    <div class="links">
+      <a href="https://www.threads.com/@selfos.life" rel="me">Threads</a>
+      <a href="https://www.instagram.com/selfos.life/" rel="me">Instagram</a>
+      <a href="https://www.tiktok.com/@selfos1" rel="me">TikTok</a>
+      <a href="https://www.pinterest.com/selfosapp/" rel="me">Pinterest</a>
+      <a href="https://linktr.ee/selfos.life" rel="me">Linktree</a>
+    </div>
+    <div>© 2026 SelfOS · <a href="https://platform.fatsecret.com">Powered by fatsecret Platform API</a></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var uk = null; // texts are already in the markup (tools/build-uk.mjs)
+  // LANGUAGE = TWO REAL PAGES: "/" (English) and "/uk/" (Ukrainian).
+  // The switch used to swap the texts in place with JavaScript, so a search
+  // engine only ever saw English - there was no Ukrainian page to index.
+  // /uk/index.html is GENERATED from this file and the dictionary above:
+  // after any edit here run `node tools/build-uk.mjs` and commit both files.
+  var pageLang = document.documentElement.lang === "uk" ? "uk" : "en";
+  function langUrl(lang) {
+    // keep everything else in the address (utm labels, #section), drop ?lang
+    var params = new URLSearchParams(location.search);
+    params.delete("lang");
+    var rest = params.toString();
+    return (lang === "uk" ? "/uk/" : "/") + (rest ? "?" + rest : "") + location.hash;
+  }
+  document.querySelectorAll(".lang button").forEach(function (b) {
+    var lang = b.getAttribute("data-lang");
+    b.classList.toggle("on", lang === pageLang);
+    b.addEventListener("click", function () {
+      try { localStorage.setItem("selfos-lang", lang); } catch (e) {}
+      if (lang !== pageLang) location.href = langUrl(lang);
+    });
+  });
+  var saved = null;
+  try { saved = localStorage.getItem("selfos-lang"); } catch (e) {}
+  var q = (location.search.match(/[?&]lang=(uk|en)/) || [])[1];
+  var nav = (navigator.language || "").toLowerCase();
+  // Only the English page forwards, and only to Ukrainian: an old ?lang=uk
+  // link, a visitor who chose UA before, or a Ukrainian-language browser with
+  // no choice made yet. An explicit /uk/ address always stays put.
+  var want = q || (saved === "uk" || saved === "en" ? saved : (nav.indexOf("uk") === 0 ? "uk" : null));
+  if (pageLang === "en" && want === "uk") location.replace(langUrl("uk"));
+  else if (pageLang === "uk" && q === "en") location.replace(langUrl("en"));
+
+  // theme toggle
+  document.getElementById("theme-toggle").addEventListener("click", function () {
+    var cur = document.documentElement.getAttribute("data-theme");
+    var next = cur === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("selfos-theme", next); } catch (e) {}
+  });
+
+  // Smart download: iPhone/iPad/Mac -> App Store, everything else -> Google Play
+  var ua = navigator.userAgent || "";
+  var apple = /iPhone|iPad|iPod|Macintosh/.test(ua);
+  var href = apple
+    ? "https://apps.apple.com/app/apple-store/id6756428834?pt=128364304&ct=website_btn&mt=8"
+    : "https://play.google.com/store/apps/details?id=com.selfos.app&referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding_btn%26utm_campaign%3Dselfosapp_com";
+  document.querySelectorAll(".smart-download").forEach(function (a) { a.href = href; });
+
+  // Campaign passthrough: a visit that arrives with utm_source (an ad, a post,
+  // a creator's link) carries that label on into every store link, so App
+  // Store Connect -> Campaigns and Play Console -> Acquisition show which
+  // source the INSTALL came from - not just "website". No cookies, nothing is
+  // stored or sent anywhere: the label only travels inside the store link.
+  //   App Store:   ct=<source>_<campaign>  (a-z 0-9 _ only, 40 chars max)
+  //   Google Play: referrer=utm_source=..&utm_medium=..&utm_campaign=..
+  // Example: ?utm_source=tiktok&utm_medium=paid&utm_campaign=day_in_one_app
+  //   -> ct=tiktok_day_in_one_app
+  var utm = function (name) {
+    var m = location.search.match(new RegExp("[?&]utm_" + name + "=([^&#]*)"));
+    if (!m) return "";
+    var v;
+    try { v = decodeURIComponent(m[1].replace(/\+/g, " ")); } catch (e) { v = m[1]; }
+    return v.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 30);
+  };
+  var utmSource = utm("source");
+  if (utmSource) {
+    var utmCampaign = utm("campaign");
+    var utmMedium = utm("medium") || "link";
+    var ct = (utmCampaign ? utmSource + "_" + utmCampaign : utmSource).slice(0, 40);
+    var referrer = encodeURIComponent(
+      "utm_source=" + utmSource + "&utm_medium=" + utmMedium +
+      (utmCampaign ? "&utm_campaign=" + utmCampaign : "")
+    );
+    document.querySelectorAll('a[href*="apps.apple.com/app/"]').forEach(function (a) {
+      a.href = a.getAttribute("href").replace(/([?&]ct=)[^&]*/, "$1" + ct);
+    });
+    document.querySelectorAll('a[href*="play.google.com/store/apps/details"]').forEach(function (a) {
+      a.href = a.getAttribute("href").replace(/([?&]referrer=)[^&]*/, "$1" + referrer);
+    });
+  }
+
+  // GoatCounter events: which download button people actually press
+  // (hero / bottom CTA / the "Download" button in the nav), and the EN/UA
+  // switch. Each is one line in the dashboard, e.g. "click-appstore-hero".
+  // No cookies and nothing personal: just the event name and the page.
+  function gcCount(name) {
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({ path: name, title: name, event: true });
+    }
+  }
+  document.querySelectorAll(".stores").forEach(function (box, i) {
+    var place = i === 0 ? "hero" : "cta";
+    box.querySelectorAll("a").forEach(function (a) {
+      var store = /apps\.apple\.com/.test(a.href) ? "appstore" : "play";
+      a.addEventListener("click", function () { gcCount("click-" + store + "-" + place); });
+    });
+  });
+  document.querySelectorAll(".smart-download").forEach(function (a) {
+    a.addEventListener("click", function () { gcCount("click-" + (apple ? "appstore" : "play") + "-nav"); });
+  });
+  document.querySelectorAll("[data-lang]").forEach(function (b) {
+    b.addEventListener("click", function () { gcCount("switch-lang-" + b.getAttribute("data-lang")); });
+  });
+
+  // Fireflies, like the ones around the bonsai. They live on the page, not on the screen:
+  // each one keeps its spot while you scroll.
+  var canvas = document.getElementById("fireflies");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (canvas && canvas.getContext && !reduce) {
+    var ctx = canvas.getContext("2d"), W, H, DOC, flies = [], dpr = Math.min(window.devicePixelRatio || 1, 2);
+    function mk() {
+      return { x: Math.random() * W, y: Math.random() * DOC, r: 1.2 + Math.random() * 1.8,
+               vx: (Math.random() - .5) * .25, vy: (Math.random() - .5) * .25,
+               ph: Math.random() * Math.PI * 2, sp: .01 + Math.random() * .02, hue: 95 + Math.random() * 60 };
+    }
+    function size() {
+      W = window.innerWidth; H = window.innerHeight;
+      DOC = Math.max(document.documentElement.scrollHeight, H);
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var want = Math.round((W < 700 ? 9 : 16) * (DOC / H));
+      while (flies.length < want) flies.push(mk());
+      flies.length = Math.min(flies.length, want);
+    }
+    size(); window.addEventListener("resize", size);
+    if (window.ResizeObserver) new ResizeObserver(size).observe(document.body);
+    var paused = false;
+    document.addEventListener("visibilitychange", function () { paused = document.hidden; });
+    function tick() {
+      if (!paused) {
+        var sy = window.scrollY || window.pageYOffset || 0;
+        ctx.clearRect(0, 0, W, H);
+        for (var i = 0; i < flies.length; i++) {
+          var f = flies[i];
+          f.ph += f.sp; f.x += f.vx + Math.sin(f.ph * 1.7) * .25; f.y += f.vy + Math.cos(f.ph) * .2;
+          if (f.x < -10) f.x = W + 10; if (f.x > W + 10) f.x = -10;
+          if (f.y < -10) f.y = DOC + 10; if (f.y > DOC + 10) f.y = -10;
+          var y = f.y - sy;
+          if (y < -20 || y > H + 20) continue;
+          var a = .35 + .65 * (Math.sin(f.ph) * .5 + .5);
+          var g = ctx.createRadialGradient(f.x, y, 0, f.x, y, f.r * 6);
+          g.addColorStop(0, "hsla(" + f.hue + ",90%,75%," + a + ")");
+          g.addColorStop(.4, "hsla(" + f.hue + ",90%,60%," + (a * .35) + ")");
+          g.addColorStop(1, "hsla(" + f.hue + ",90%,60%,0)");
+          ctx.fillStyle = g; ctx.beginPath(); ctx.arc(f.x, y, f.r * 6, 0, Math.PI * 2); ctx.fill();
+          ctx.fillStyle = "hsla(" + f.hue + ",100%,90%," + a + ")"; ctx.beginPath(); ctx.arc(f.x, y, f.r, 0, Math.PI * 2); ctx.fill();
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+    tick();
+  }
+})();
+</script>
+
+
+</body></html>

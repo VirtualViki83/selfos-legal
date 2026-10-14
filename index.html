@@ -6,9 +6,15 @@
 <title>SelfOS - Self-Care Tracker & Daily Planner for iPhone and Android</title>
 <meta name="description" content="SelfOS is a self-care tracker and daily planner for iOS and Android: habit tracker, goal tracker, water, sleep, nutrition and activity trackers in one calm app, with a bonsai that grows from your daily care. Free on the App Store and Google Play.">
 <link rel="canonical" href="https://selfosapp.com/">
+<link rel="alternate" hreflang="en" href="https://selfosapp.com/">
+<link rel="alternate" hreflang="uk" href="https://selfosapp.com/uk/">
+<link rel="alternate" hreflang="x-default" href="https://selfosapp.com/">
 <meta name="apple-itunes-app" content="app-id=6756428834">
 <meta name="p:domain_verify" content="7b3009bbe5d0ce336eff5dc797273fe0"/>
 <meta name="theme-color" content="#cddbd3">
+<!-- GoatCounter: a privacy-friendly counter (no cookies, no personal identifiers; see privacy policy §15).
+     Counts page views and, below, which store button was clicked. -->
+<script data-goatcounter="https://selfos.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
@@ -65,7 +71,7 @@
     {"@type": "Question", "name": "Is SelfOS free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All eight modules, including every health tracker, work for free. The free tier has limits on volume: 2 goals, 20 active tasks, 2 habit categories, 1 shopping list, 3 custom dishes and 3 full reports. Premium removes the limits and adds automatic calendar sync, themes and backgrounds, with a 7-day free trial on the yearly plan."}},
     {"@type": "Question", "name": "Which languages does SelfOS support?", "acceptedAnswer": {"@type": "Answer", "text": "English, Ukrainian and Russian. The app follows your phone's language."}},
     {"@type": "Question", "name": "Does SelfOS work offline?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Core features work without a connection; the internet is only needed for food search and barcode scanning."}},
-    {"@type": "Question", "name": "Does SelfOS sync with Apple Health or Google Health Connect?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet. Health sync and home screen widgets are the next big things on the roadmap."}},
+    {"@type": "Question", "name": "Does SelfOS sync with Apple Health or Google Health Connect?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Turn it on in Profile → Watches & trackers: sleep, workouts and steps from your watch or tracker come in through Apple Health or Health Connect - read-only, and the data stays on your device. Home-screen widgets are there too, for free."}},
     {"@type": "Question", "name": "Is this the SelfOS with the bonsai?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. This is the self-care tracker by Viktoriia Smyrnova with the bonsai on the home screen. There are other apps with a similar name."}}
   ]
 }
@@ -418,7 +424,7 @@
     <details><summary data-i18n="faq.1q">Is SelfOS free?</summary><p data-i18n="faq.1a">Yes. All eight modules, including every health tracker, work for free. The free tier has limits on volume: 2 goals, 20 active tasks, 2 habit categories, 1 shopping list, 3 custom dishes and 3 full reports. Premium removes the limits and adds automatic calendar sync, themes and backgrounds, with a 7-day free trial on the yearly plan. Prices are shown in your store in your currency.</p></details>
     <details><summary data-i18n="faq.2q">Which languages does it support?</summary><p data-i18n="faq.2a">English, Ukrainian and Russian. The app follows your phone's language.</p></details>
     <details><summary data-i18n="faq.3q">Does it work offline?</summary><p data-i18n="faq.3a">Yes. Core features work without a connection. The internet is only needed for food search and barcode scanning.</p></details>
-    <details><summary data-i18n="faq.4q">Does it sync with Apple Health or Google Health Connect?</summary><p data-i18n="faq.4a">Not yet. Health sync and home screen widgets are the next big things on the roadmap.</p></details>
+    <details><summary data-i18n="faq.4q">Does it sync with Apple Health or Google Health Connect?</summary><p data-i18n="faq.4a">Yes. Turn it on in Profile → Watches &amp; trackers: sleep, workouts and steps from your watch or tracker come in through Apple Health or Health Connect - read-only, and the data stays on your device. Home-screen widgets are there too, for free.</p></details>
     <details><summary data-i18n="faq.5q">Is this the SelfOS with the bonsai?</summary><p data-i18n="faq.5a">Yes. If you heard about SelfOS in a video or a thread, this is the one: the self-care tracker by Viktoriia Smyrnova, with the tree on the home screen. There are other apps with a similar name.</p></details>
   </div>
 </section>
@@ -531,7 +537,7 @@
     "faq.3q": "Працює без інтернету?",
     "faq.3a": "Так. Основні функції працюють без з'єднання. Інтернет потрібен лише для пошуку продуктів і сканування штрихкодів.",
     "faq.4q": "Синхронізується з Apple Health чи Google Health Connect?",
-    "faq.4a": "Поки ні. Синхронізація зі здоров'ям і віджети на головний екран - наступні великі пункти в планах.",
+    "faq.4a": "Так. Увімкни в Профіль → Годинники і трекери: сон, тренування і кроки з годинника чи трекера надходять через Apple Health або Health Connect - лише читання, і дані лишаються на твоєму пристрої. Віджети на головний екран теж є, безкоштовно.",
     "faq.5q": "Це той SelfOS, що з бонсаєм?",
     "faq.5a": "Так. Якщо ти чула про SelfOS у відео чи треді, це він: трекер турботи про себе від Вікторії Смирнової, з деревом на головному екрані. Є інші застосунки зі схожою назвою.",
     "nt.h2": "Не просто застосунок - простір для твого життя 🌿",
@@ -547,31 +553,37 @@
     "ft.privacy": "Політика конфіденційності", "ft.terms": "Умови використання",
     "ft.delete": "Видалення даних", "ft.contact": "Контакт"
   };
-  var en = {};
-  var nodes = document.querySelectorAll("[data-i18n]");
-  nodes.forEach(function (n) { en[n.getAttribute("data-i18n")] = n.innerHTML; });
-
-  function setLang(lang) {
-    var dict = lang === "uk" ? uk : en;
-    nodes.forEach(function (n) {
-      var k = n.getAttribute("data-i18n");
-      if (dict[k] !== undefined) n.innerHTML = dict[k];
-    });
-    document.documentElement.lang = lang;
-    document.querySelectorAll(".lang button").forEach(function (b) {
-      b.classList.toggle("on", b.getAttribute("data-lang") === lang);
-    });
-    try { localStorage.setItem("selfos-lang", lang); } catch (e) {}
+  // LANGUAGE = TWO REAL PAGES: "/" (English) and "/uk/" (Ukrainian).
+  // The switch used to swap the texts in place with JavaScript, so a search
+  // engine only ever saw English - there was no Ukrainian page to index.
+  // /uk/index.html is GENERATED from this file and the dictionary above:
+  // after any edit here run `node tools/build-uk.mjs` and commit both files.
+  var pageLang = document.documentElement.lang === "uk" ? "uk" : "en";
+  function langUrl(lang) {
+    // keep everything else in the address (utm labels, #section), drop ?lang
+    var params = new URLSearchParams(location.search);
+    params.delete("lang");
+    var rest = params.toString();
+    return (lang === "uk" ? "/uk/" : "/") + (rest ? "?" + rest : "") + location.hash;
   }
   document.querySelectorAll(".lang button").forEach(function (b) {
-    b.addEventListener("click", function () { setLang(b.getAttribute("data-lang")); });
+    var lang = b.getAttribute("data-lang");
+    b.classList.toggle("on", lang === pageLang);
+    b.addEventListener("click", function () {
+      try { localStorage.setItem("selfos-lang", lang); } catch (e) {}
+      if (lang !== pageLang) location.href = langUrl(lang);
+    });
   });
   var saved = null;
   try { saved = localStorage.getItem("selfos-lang"); } catch (e) {}
   var q = (location.search.match(/[?&]lang=(uk|en)/) || [])[1];
   var nav = (navigator.language || "").toLowerCase();
-  if (q) setLang(q);
-  else if (saved === "uk" || (!saved && nav.indexOf("uk") === 0)) setLang("uk");
+  // Only the English page forwards, and only to Ukrainian: an old ?lang=uk
+  // link, a visitor who chose UA before, or a Ukrainian-language browser with
+  // no choice made yet. An explicit /uk/ address always stays put.
+  var want = q || (saved === "uk" || saved === "en" ? saved : (nav.indexOf("uk") === 0 ? "uk" : null));
+  if (pageLang === "en" && want === "uk") location.replace(langUrl("uk"));
+  else if (pageLang === "uk" && q === "en") location.replace(langUrl("en"));
 
   // theme toggle
   document.getElementById("theme-toggle").addEventListener("click", function () {
@@ -588,6 +600,62 @@
     ? "https://apps.apple.com/app/apple-store/id6756428834?pt=128364304&ct=website_btn&mt=8"
     : "https://play.google.com/store/apps/details?id=com.selfos.app&referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding_btn%26utm_campaign%3Dselfosapp_com";
   document.querySelectorAll(".smart-download").forEach(function (a) { a.href = href; });
+
+  // Campaign passthrough: a visit that arrives with utm_source (an ad, a post,
+  // a creator's link) carries that label on into every store link, so App
+  // Store Connect -> Campaigns and Play Console -> Acquisition show which
+  // source the INSTALL came from - not just "website". No cookies, nothing is
+  // stored or sent anywhere: the label only travels inside the store link.
+  //   App Store:   ct=<source>_<campaign>  (a-z 0-9 _ only, 40 chars max)
+  //   Google Play: referrer=utm_source=..&utm_medium=..&utm_campaign=..
+  // Example: ?utm_source=tiktok&utm_medium=paid&utm_campaign=day_in_one_app
+  //   -> ct=tiktok_day_in_one_app
+  var utm = function (name) {
+    var m = location.search.match(new RegExp("[?&]utm_" + name + "=([^&#]*)"));
+    if (!m) return "";
+    var v;
+    try { v = decodeURIComponent(m[1].replace(/\+/g, " ")); } catch (e) { v = m[1]; }
+    return v.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 30);
+  };
+  var utmSource = utm("source");
+  if (utmSource) {
+    var utmCampaign = utm("campaign");
+    var utmMedium = utm("medium") || "link";
+    var ct = (utmCampaign ? utmSource + "_" + utmCampaign : utmSource).slice(0, 40);
+    var referrer = encodeURIComponent(
+      "utm_source=" + utmSource + "&utm_medium=" + utmMedium +
+      (utmCampaign ? "&utm_campaign=" + utmCampaign : "")
+    );
+    document.querySelectorAll('a[href*="apps.apple.com/app/"]').forEach(function (a) {
+      a.href = a.getAttribute("href").replace(/([?&]ct=)[^&]*/, "$1" + ct);
+    });
+    document.querySelectorAll('a[href*="play.google.com/store/apps/details"]').forEach(function (a) {
+      a.href = a.getAttribute("href").replace(/([?&]referrer=)[^&]*/, "$1" + referrer);
+    });
+  }
+
+  // GoatCounter events: which download button people actually press
+  // (hero / bottom CTA / the "Download" button in the nav), and the EN/UA
+  // switch. Each is one line in the dashboard, e.g. "click-appstore-hero".
+  // No cookies and nothing personal: just the event name and the page.
+  function gcCount(name) {
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({ path: name, title: name, event: true });
+    }
+  }
+  document.querySelectorAll(".stores").forEach(function (box, i) {
+    var place = i === 0 ? "hero" : "cta";
+    box.querySelectorAll("a").forEach(function (a) {
+      var store = /apps\.apple\.com/.test(a.href) ? "appstore" : "play";
+      a.addEventListener("click", function () { gcCount("click-" + store + "-" + place); });
+    });
+  });
+  document.querySelectorAll(".smart-download").forEach(function (a) {
+    a.addEventListener("click", function () { gcCount("click-" + (apple ? "appstore" : "play") + "-nav"); });
+  });
+  document.querySelectorAll("[data-lang]").forEach(function (b) {
+    b.addEventListener("click", function () { gcCount("switch-lang-" + b.getAttribute("data-lang")); });
+  });
 
   // Fireflies, like the ones around the bonsai. They live on the page, not on the screen:
   // each one keeps its spot while you scroll.
