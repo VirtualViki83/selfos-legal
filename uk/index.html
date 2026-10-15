@@ -623,15 +623,30 @@
       window.goatcounter.count({ path: name, title: name, event: true });
     }
   }
+  // A store link on a phone switches straight to the App Store / Google Play
+  // app, and the browser drops the event on the way out (seen 15.10.2026: a
+  // tap on an iPhone never reached the counter, the same click from a Mac
+  // did). So a plain tap sends the event first and opens the store ~0.3 s
+  // later. Cmd/Ctrl/middle clicks and a missing counter go through untouched.
+  function countThenGo(a, name) {
+    a.addEventListener("click", function (e) {
+      gcCount(name);
+      var plain = e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey;
+      if (!plain || !(window.goatcounter && window.goatcounter.count)) return;
+      e.preventDefault();
+      var href = a.href;
+      setTimeout(function () { window.location.href = href; }, 300);
+    });
+  }
   document.querySelectorAll(".stores").forEach(function (box, i) {
     var place = i === 0 ? "hero" : "cta";
     box.querySelectorAll("a").forEach(function (a) {
       var store = /apps\.apple\.com/.test(a.href) ? "appstore" : "play";
-      a.addEventListener("click", function () { gcCount("click-" + store + "-" + place); });
+      countThenGo(a, "click-" + store + "-" + place);
     });
   });
   document.querySelectorAll(".smart-download").forEach(function (a) {
-    a.addEventListener("click", function () { gcCount("click-" + (apple ? "appstore" : "play") + "-nav"); });
+    countThenGo(a, "click-" + (apple ? "appstore" : "play") + "-nav");
   });
   document.querySelectorAll("[data-lang]").forEach(function (b) {
     b.addEventListener("click", function () { gcCount("switch-lang-" + b.getAttribute("data-lang")); });
