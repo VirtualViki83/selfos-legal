@@ -47,14 +47,22 @@
     font-weight: 600;
   }
   .btn.secondary { background: transparent; border: 1px solid #2c5a44; }
+  /* Phones only see the short line while the store opens; the buttons show on
+     a computer, or on a phone if the store hasn't opened after 2.5 s. */
+  .choice { display: none; }
+  .show-choice .choice { display: block; }
+  .show-choice .wait { display: none; }
 </style>
 </head>
 <body>
 <div class="card">
+  <p class="wait">Opening the store...</p>
+  <div class="choice">
   <h1>SelfOS: Self-Care Tracker</h1>
-  <p>Taking you to the store...</p>
+  <p>Free on iPhone and Android</p>
   <a class="btn" id="ios-link" href="https://apps.apple.com/app/apple-store/id6756428834?pt=128364304&amp;ct=tiktok&amp;mt=8">Download on the App Store</a>
   <a class="btn secondary" id="android-link" href="https://play.google.com/store/apps/details?id=com.selfos.app&amp;referrer=utm_source%3Dtiktok%26utm_medium%3Dpromote">Get it on Google Play</a>
+  </div>
 </div>
 <script>
   (function () {
@@ -83,6 +91,9 @@
     var isIOS = /iphone|ipad|ipod/i.test(ua) ||
       (/macintosh/i.test(ua) && navigator.maxTouchPoints > 1); /* iPadOS reports as Mac */
     var target = isAndroid ? android : (isIOS ? ios : null);
+    var showChoice = function () { document.body.className = "show-choice"; };
+    if (!target) showChoice();
+    else setTimeout(showChoice, 2500);
 
     var gc = function () { return window.goatcounter && window.goatcounter.count ? window.goatcounter : null; };
     var counted = false;
