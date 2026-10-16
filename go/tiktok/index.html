@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>SelfOS: Self-Care Tracker</title>
+<!--
+  Ad link for TikTok (16.10.2026): the ad points here instead of the landing
+  page, because people from an ad don't read a page, they want the store.
+  An iPhone goes to the App Store, an Android phone to Google Play, a computer
+  sees both buttons. The ad's utm_* label travels into the store link
+  (App Store ct=<source>_<campaign>, Google Play referrer=utm_...), so installs
+  show up in App Store Connect -> Campaigns and Play Console -> Acquisition.
+  GoatCounter (no cookies, see privacy policy §15) records the visit with its
+  campaign and an event "redirect-appstore" / "redirect-play" BEFORE leaving:
+  on a phone the switch to the store app drops a request sent too late.
+  Example: /go/tiktok/?utm_source=tiktok&utm_medium=promote&utm_campaign=chaos_oct
+-->
+<script data-goatcounter="https://selfos.goatcounter.com/count"
+        data-goatcounter-settings='{"no_onload": true}'
+        async src="//gc.zgo.at/count.js"></script>
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0d1f17;
+    color: #e8f0eb;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    text-align: center;
+  }
+  .card { padding: 32px 24px; max-width: 320px; }
+  h1 { font-size: 22px; margin: 0 0 8px; }
+  p { font-size: 15px; opacity: 0.75; margin: 0 0 28px; }
+  .btn {
+    display: block;
+    margin: 12px 0;
+    padding: 14px 20px;
+    border-radius: 12px;
+    background: #1e4634;
+    color: #e8f0eb;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .btn.secondary { background: transparent; border: 1px solid #2c5a44; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>SelfOS: Self-Care Tracker</h1>
+  <p>Taking you to the store...</p>
+  <a class="btn" id="ios-link" href="https://apps.apple.com/app/apple-store/id6756428834?pt=128364304&amp;ct=tiktok&amp;mt=8">Download on the App Store</a>
+  <a class="btn secondary" id="android-link" href="https://play.google.com/store/apps/details?id=com.selfos.app&amp;referrer=utm_source%3Dtiktok%26utm_medium%3Dpromote">Get it on Google Play</a>
+</div>
+<script>
+  (function () {
+    var ios = document.getElementById("ios-link");
+    var android = document.getElementById("android-link");
+
+    // utm_* from the ad link, cleaned for the store links (a-z 0-9 _ only)
+    var utm = function (name) {
+      var m = location.search.match(new RegExp("[?&]utm_" + name + "=([^&#]*)"));
+      if (!m) return "";
+      var v;
+      try { v = decodeURIComponent(m[1].replace(/\+/g, " ")); } catch (e) { v = m[1]; }
+      return v.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 30);
+    };
+    var source = utm("source") || "tiktok";
+    var medium = utm("medium") || "promote";
+    var campaign = utm("campaign");
+    var ct = (campaign ? source + "_" + campaign : source).slice(0, 40);
+    ios.href = "https://apps.apple.com/app/apple-store/id6756428834?pt=128364304&ct=" + ct + "&mt=8";
+    android.href = "https://play.google.com/store/apps/details?id=com.selfos.app&referrer=" +
+      encodeURIComponent("utm_source=" + source + "&utm_medium=" + medium +
+        (campaign ? "&utm_campaign=" + campaign : ""));
+
+    var ua = navigator.userAgent || "";
+    var isAndroid = /android/i.test(ua);
+    var isIOS = /iphone|ipad|ipod/i.test(ua) ||
+      (/macintosh/i.test(ua) && navigator.maxTouchPoints > 1); /* iPadOS reports as Mac */
+    var target = isAndroid ? android : (isIOS ? ios : null);
+
+    var gc = function () { return window.goatcounter && window.goatcounter.count ? window.goatcounter : null; };
+    var counted = false;
+    var countVisit = function () {
+      var g = gc();
+      if (!g || counted) return !!g;
+      counted = true;
+      // the visit, with the ad's query so the campaign shows up in the dashboard
+      g.count({ path: "/go/tiktok/" });
+      if (target) {
+        var name = target === ios ? "redirect-appstore" : "redirect-play";
+        g.count({ path: name, title: name, event: true });
+      }
+      return true;
+    };
+
+    // Computers stay here and pick a store; their visit is still counted.
+    // Phones: count, give the request ~0.4 s to leave, then go to the store.
+    // If the counter hasn't loaded in 1.5 s (blocked, slow network), go anyway.
+    var gone = false;
+    var go = function () {
+      if (gone || !target) return;
+      gone = true;
+      location.replace(target.href);
+    };
+    var started = Date.now();
+    (function wait() {
+      if (countVisit()) { setTimeout(go, 400); return; }
+      if (Date.now() - started > 1500) { go(); return; }
+      setTimeout(wait, 100);
+    })();
+  })();
+</script>
+</body>
+</html>
