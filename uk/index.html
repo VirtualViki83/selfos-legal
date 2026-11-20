@@ -33,6 +33,20 @@
     if (t !== "dark" && t !== "light") t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     document.documentElement.setAttribute("data-theme", t);
   })();
+  // Black Friday 27-30.11.2026: the ribbon and the stickers show only inside
+  // the sale window (UTC, the same window as the Google Play offer), then hide
+  // by themselves. Preview any time: ?bf=1, or ?bf=ios / ?bf=android for the
+  // per-phone variant (the code line is iPhone-only, the yearly sticker is
+  // hidden on Android: the yearly discount exists only in the App Store).
+  (function () {
+    var root = document.documentElement, ua = navigator.userAgent || "";
+    var bf = (location.search.match(/[?&]bf=(1|ios|android)/) || [])[1];
+    var now = Date.now();
+    if (bf || (now >= Date.UTC(2026, 10, 27) && now < Date.UTC(2026, 11, 1, 8))) root.classList.add("bf-on");
+    var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    if (bf === "ios" || (!bf || bf === "1") && ios) root.classList.add("is-ios");
+    if (bf === "android" || (!bf || bf === "1") && /Android/.test(ua)) root.classList.add("is-android");
+  })();
 </script>
 <script type="application/ld+json">
 {
@@ -315,6 +329,44 @@
   footer a:hover { color: #fff; }
   .links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
 
+  /* Black Friday 27-30.11.2026 (see the script in <head>): nothing shows
+     unless <html class="bf-on">. A yellow tape curving along the hero (up the
+     left margin and across the top on wide screens, a wave across the top
+     otherwise) and across the bottom CTA, red price stickers on the right side
+     of the phone and above the CTA heading and, on an iPhone, a line that
+     opens the BLACKFRIDAY2026 offer-code sheet. The tape's path is drawn by
+     the Black Friday script at the end of the page. */
+  .bf { display: none; }
+  .bf-on .bf-tape { display: block; }
+  .bf-on .bf-stickers { display: flex; }
+  .bf-on.is-ios .bf-code { display: inline-flex; }
+  .is-android .bf-s2 { display: none; }
+  .bf-on .hero .wrap { padding-top: 120px; }
+  .bf-on .cta { overflow: hidden; padding-top: 128px; }
+  .bf-tape { position: absolute; z-index: 3; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; filter: drop-shadow(0 8px 12px rgba(0,0,0,.28)); }
+  .bf-tape .edge { fill: none; stroke: #121212; stroke-width: 44; }
+  .bf-tape .band { fill: none; stroke: #ffd23f; stroke-width: 38; }
+  .bf-tape text { fill: #121212; font-size: 14px; font-weight: 800; letter-spacing: .16em; }
+  .hero-text { position: relative; }
+  .bf-stickers { gap: 16px; }
+  .hero .bf-stickers { position: absolute; z-index: 3; right: -128px; top: 13%; flex-direction: column; gap: 34px; }
+  .cta .bf-stickers { justify-content: center; margin: 0 0 22px; }
+  .bf-sticker { width: 108px; height: 108px; flex: none; border-radius: 50%; background: #e3342f; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; line-height: 1.05; transform: rotate(-9deg); box-shadow: 0 12px 24px rgba(0,0,0,.3), inset 0 0 0 5px #e3342f, inset 0 0 0 6.5px rgba(255,255,255,.8); }
+  .bf-sticker b { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; }
+  .bf-sticker span { font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; margin-top: 4px; }
+  .bf-sticker small { max-width: 70px; font-size: 10.5px; line-height: 1.15; font-weight: 600; opacity: .92; }
+  .bf-s2 { transform: rotate(7deg); }
+  .bf-code { align-items: center; gap: 6px; margin: 2px 0 14px; padding: 9px 14px; border-radius: 12px; border: 1.5px dashed #ffd23f; background: rgba(255,210,63,.14); color: var(--ink); font-size: 14px; font-weight: 600; text-decoration: none; }
+  .bf-code:hover { background: rgba(255,210,63,.24); }
+  @media (max-width: 1300px) { .hero .bf-stickers { right: -56px; } }
+  @media (max-width: 860px) {
+    .bf-on .hero .wrap { padding-top: 104px; }
+    .bf-on .cta { padding-top: 112px; }
+    .hero .bf-stickers { right: -34px; top: 7%; gap: 20px; }
+    .bf-sticker { width: 94px; height: 94px; }
+    .bf-sticker b { font-size: 26px; }
+  }
+
   @media (max-width: 960px) { .menu { display: none; } }
   @media (max-width: 860px) {
     .hero .wrap { grid-template-columns: 1fr; padding-top: 40px; padding-bottom: 48px; }
@@ -362,8 +414,9 @@
 </nav>
 
 <header class="hero" id="top">
+  <svg class="bf bf-tape" aria-hidden="true"><path class="edge"></path><path class="band" id="bf-path-hero"></path><text class="measure" x="0" y="-100" visibility="hidden"></text><text dominant-baseline="central"><textPath href="#bf-path-hero" data-i18n="bf.ribbon">ЧОРНА П'ЯТНИЦЯ ✦ 27-30 ЛИСТОПАДА</textPath></text></svg>
   <div class="wrap">
-    <div>
+    <div class="hero-text">
       <p class="eyebrow" data-i18n="hero.eyebrow">SelfOS · застосунок для турботи про себе</p>
       <h1 class="serif" data-i18n="hero.h1">Турбота про кожну частину тебе</h1>
       <p class="lead" data-i18n="hero.lead">Вода, їжа, сон, активність, завдання, цілі та звички - в одному спокійному застосунку. І бонсай, який росте від щоденної турботи про себе.</p>
@@ -377,6 +430,7 @@
           <span data-i18n="store.android">Отримати в Google Play</span>
         </a>
       </div>
+      <a class="bf bf-code" href="https://apps.apple.com/redeem?ctx=offercodes&amp;id=6756428834&amp;code=BLACKFRIDAY2026"><span data-i18n="bf.code">Річний план −50% на перший рік: активувати код BLACKFRIDAY2026</span> →</a>
       <p class="fine" data-i18n="hero.fine">Безкоштовно · без реєстрації · дані залишаються на телефоні</p>
       <div class="socials" aria-label="SelfOS on social media">
         <a href="https://www.threads.com/@selfos.life" title="Threads" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"></path></svg></a>
@@ -386,8 +440,12 @@
         <a href="mailto:selfos.contact@gmail.com" title="Email" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m3 7 9 6 9-6"></path></svg></a>
       </div>
     </div>
-    <div class="phone" aria-hidden="true">
-      <div class="screen">
+    <div class="phone">
+      <div class="bf bf-stickers">
+        <div class="bf-sticker bf-s1"><b>−30%</b><span data-i18n="bf.s1">Назавжди</span><small data-i18n="bf.s1sub">iPhone і Android</small></div>
+        <div class="bf-sticker bf-s2"><b>−50%</b><span data-i18n="bf.s2">Річний</span><small data-i18n="bf.s2sub">на iPhone</small></div>
+      </div>
+      <div class="screen" aria-hidden="true">
         <video autoplay="" muted="" loop="" playsinline="" preload="metadata" poster="/assets/hero-poster.jpg" width="540" height="1170">
           <source src="/assets/hero.mp4" type="video/mp4">
           <img src="/assets/hero-poster.jpg" alt="SelfOS app preview" width="540" height="1170">
@@ -494,7 +552,12 @@
 </section>
 
 <section class="cta">
+  <svg class="bf bf-tape" aria-hidden="true"><path class="edge"></path><path class="band" id="bf-path-cta"></path><text class="measure" x="0" y="-100" visibility="hidden"></text><text dominant-baseline="central"><textPath href="#bf-path-cta" data-i18n="bf.ribbon">ЧОРНА П'ЯТНИЦЯ ✦ 27-30 ЛИСТОПАДА</textPath></text></svg>
   <div class="wrap">
+    <div class="bf bf-stickers">
+      <div class="bf-sticker bf-s1"><b>−30%</b><span data-i18n="bf.s1">Назавжди</span><small data-i18n="bf.s1sub">iPhone і Android</small></div>
+      <div class="bf-sticker bf-s2"><b>−50%</b><span data-i18n="bf.s2">Річний</span><small data-i18n="bf.s2sub">на iPhone</small></div>
+    </div>
     <h2 class="serif" data-i18n="cta.h2">Посади своє дерево сьогодні</h2>
     <p class="sub" style="margin: 0 auto 28px;" data-i18n="cta.sub">Безкоштовно на iPhone та Android. Без реєстрації й складних налаштувань - просто почни з себе.</p>
     <div class="stores">
@@ -507,6 +570,7 @@
         <span data-i18n="store.android">Отримати в Google Play</span>
       </a>
     </div>
+    <a class="bf bf-code" href="https://apps.apple.com/redeem?ctx=offercodes&amp;id=6756428834&amp;code=BLACKFRIDAY2026"><span data-i18n="bf.code">Річний план −50% на перший рік: активувати код BLACKFRIDAY2026</span> →</a>
   </div>
 </section>
 
@@ -648,6 +712,73 @@
   document.querySelectorAll(".smart-download").forEach(function (a) {
     countThenGo(a, "click-" + (apple ? "appstore" : "play") + "-nav");
   });
+  document.querySelectorAll(".bf-code").forEach(function (a, i) {
+    countThenGo(a, "click-bf-code-" + (i === 0 ? "hero" : "cta"));
+  });
+
+  // Black Friday tape: a yellow band along an SVG path, the text running
+  // along it. The path follows the section's size and, in the hero, the left
+  // edge of the text column: on wide screens it climbs the left margin and
+  // turns across the top, otherwise it is a wave over the top. Both ends
+  // leave the section, so the tape never stops mid-screen.
+  (function () {
+    if (!document.documentElement.classList.contains("bf-on")) return;
+    var SEP = " ✦ ";
+    var heroText = document.querySelector(".hero-text");
+    var tapes = [].slice.call(document.querySelectorAll(".bf-tape")).map(function (svg) {
+      var tp = svg.querySelector("textPath");
+      return {
+        svg: svg, box: svg.parentNode, paths: svg.querySelectorAll("path"), tp: tp,
+        measure: svg.querySelector(".measure"), unit: tp.textContent.trim() + SEP,
+        hero: svg.parentNode.classList.contains("hero"), pitch: 0
+      };
+    });
+    function wave(w) {
+      return "M -80 58 C " + w * 0.28 + " 22, " + w * 0.5 + " 86, " + w * 0.72 + " 50" +
+        " S " + w * 0.95 + " 26, " + (w + 80) + " 52";
+    }
+    function hook(x0, h) {
+      var gx = x0 - 120;
+      return "M " + gx + " " + (h + 60) +
+        " C " + (gx + 14) + " " + h * 0.6 + ", " + (gx - 24) + " 250, " + (gx + 60) + " 130" +
+        " C " + (gx + 120) + " 50, " + (gx + 300) + " 70, " + (x0 + 380) + " 56" +
+        " C " + (x0 + 520) + " 46, " + (x0 + 620) + " 20, " + (x0 + 700) + " -70";
+    }
+    function layout() {
+      tapes.forEach(function (t) {
+        var w = t.box.clientWidth, h = t.box.clientHeight, d = wave(w);
+        if (t.hero && heroText) {
+          var x0 = heroText.getBoundingClientRect().left - t.box.getBoundingClientRect().left;
+          if (x0 >= 170) d = hook(x0, h);
+        }
+        t.svg.setAttribute("viewBox", "0 0 " + w + " " + h);
+        for (var i = 0; i < t.paths.length; i++) t.paths[i].setAttribute("d", d);
+        // SVG drops the trailing space, so one unit's step is measured as
+        // (two units) - (one unit)
+        t.measure.textContent = t.unit;
+        var one = t.measure.getComputedTextLength();
+        t.measure.textContent = t.unit + t.unit;
+        t.pitch = t.measure.getComputedTextLength() - one;
+        var n = Math.ceil(t.paths[0].getTotalLength() / t.pitch) + 2;
+        t.tp.textContent = new Array(n + 1).join(t.unit);
+      });
+    }
+    layout();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+    var resizeTimer;
+    window.addEventListener("resize", function () { clearTimeout(resizeTimer); resizeTimer = setTimeout(layout, 120); });
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var start = null;
+    function roll(ts) {
+      if (start === null) start = ts;
+      var moved = (ts - start) / 1000 * 32;
+      tapes.forEach(function (t) {
+        if (t.pitch > 0) t.tp.setAttribute("startOffset", (moved % t.pitch) - t.pitch);
+      });
+      requestAnimationFrame(roll);
+    }
+    requestAnimationFrame(roll);
+  })();
   document.querySelectorAll("[data-lang]").forEach(function (b) {
     b.addEventListener("click", function () { gcCount("switch-lang-" + b.getAttribute("data-lang")); });
   });
