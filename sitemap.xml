@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://selfosapp.com/</loc><lastmod>2026-11-06</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://selfosapp.com/uk/</loc><lastmod>2026-11-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://selfosapp.com/templates/</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://selfosapp.com/templates/new-year-reset-checklist/</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://selfosapp.com/templates/2027-vision-board-ideas/</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://selfosapp.com/templates/december-self-care-calendar/</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://selfosapp.com/uk/templates/tsili-na-2027-rik/</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://selfosapp.com/features/habit-tracker/</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://selfosapp.com/privacy-policy.html</loc><lastmod>2026-11-18</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://selfosapp.com/terms-of-use.html</loc><lastmod>2026-11-06</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://selfosapp.com/data-deletion.html</loc><lastmod>2026-11-18</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
