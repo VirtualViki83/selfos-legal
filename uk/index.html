@@ -343,7 +343,8 @@
   .is-android .bf-s2 { display: none; }
   .bf-on .hero .wrap { padding-top: 120px; }
   .bf-on .cta { overflow: hidden; padding-top: 128px; }
-  .bf-tape { position: absolute; z-index: 3; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; filter: drop-shadow(0 8px 12px rgba(0,0,0,.28)); }
+  /* overflow-anchor: none - the rolling text changes the tape every frame; without it Chrome picks the tape as the scroll anchor and nudges the page each frame once it is scrolled a little */
+  .bf-tape { position: absolute; z-index: 3; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; overflow-anchor: none; filter: drop-shadow(0 8px 12px rgba(0,0,0,.28)); }
   .bf-tape .edge { fill: none; stroke: #121212; stroke-width: 44; }
   .bf-tape .band { fill: none; stroke: #ffd23f; stroke-width: 38; }
   .bf-tape text { fill: #121212; font-size: 14px; font-weight: 800; letter-spacing: .16em; }
