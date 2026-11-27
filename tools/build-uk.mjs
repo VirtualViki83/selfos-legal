@@ -46,6 +46,11 @@ const need = (el, what) => { if (!el) throw new Error(`index.html changed: ${wha
 
 doc.documentElement.lang = 'uk';
 
+// --- language-only nodes: data-lang-only="en" (links to English-only pages)
+// is dropped here; data-lang-only="uk" is hidden on "/" and shown here
+doc.querySelectorAll('[data-lang-only="en"]').forEach((el) => el.remove());
+doc.querySelectorAll('[data-lang-only="uk"]').forEach((el) => { el.removeAttribute('hidden'); el.removeAttribute('data-lang-only'); });
+
 // --- body texts
 let missing = 0;
 doc.querySelectorAll('[data-i18n]').forEach((node) => {

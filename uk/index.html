@@ -368,6 +368,32 @@
     .bf-sticker b { font-size: 26px; }
   }
 
+  /* Language-only nodes (tools/build-uk.mjs): data-lang-only="en" is dropped
+     from /uk/, data-lang-only="uk" stays hidden here and is shown on /uk/. */
+  [hidden] { display: none !important; }
+  a.tile { display: block; color: inherit; text-decoration: none; }
+  .tile .go { color: var(--muted); font-weight: 400; margin-left: 4px; }
+  /* Free printables (seasonal, December 2026 - January 2027) */
+  .tpl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .tpl { display: flex; flex-direction: column; background: var(--tile); border: 1px solid var(--tile-line); border-radius: 20px; overflow: hidden; color: inherit; text-decoration: none; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+  .tpl:hover { transform: translateY(-3px); border-color: rgba(16,185,129,.38); box-shadow: 0 10px 24px var(--shadow); }
+  .tpl img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; background: #f4f1ea; }
+  .tpl div { display: flex; flex-direction: column; flex: 1; padding: 14px 16px 18px; }
+  .tpl b { display: block; font-family: "Playfair Display", Georgia, serif; font-size: 19px; font-weight: 600; line-height: 1.25; margin-bottom: 6px; }
+  .tpl span { display: block; font-size: 14px; color: var(--muted); margin-bottom: 12px; }
+  .tpl small { align-self: flex-start; margin-top: auto; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--tile-line); font-size: 12px; color: var(--ink-soft); }
+  .tpl-grid.one { grid-template-columns: 1fr; max-width: 720px; }
+  .tpl-grid.one .tpl { flex-direction: row; align-items: center; }
+  .tpl-grid.one img { width: 180px; flex: none; }
+  .tpl-all { display: inline-block; margin-top: 22px; font-weight: 600; color: var(--ink); text-underline-offset: 4px; }
+  @media (max-width: 720px) {
+    .tpl-grid { grid-template-columns: 1fr; gap: 12px; }
+    .tpl { flex-direction: row; align-items: center; }
+    .tpl img, .tpl-grid.one img { width: 84px; flex: none; margin: 14px 0 14px 14px; border-radius: 10px; }
+    .tpl div { padding: 14px 16px; }
+    .tpl b { font-size: 17px; }
+  }
+
   @media (max-width: 960px) { .menu { display: none; } }
   @media (max-width: 860px) {
     .hero .wrap { grid-template-columns: 1fr; padding-top: 40px; padding-bottom: 48px; }
@@ -469,6 +495,7 @@
       <p class="group-label" data-i18n="mod.g2">Турбота про твій день</p>
       <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4"></path><path d="m3 7 2 2 4-4"></path><path d="M13 6h8"></path><path d="M13 12h8"></path><path d="M13 18h8"></path></svg></div><h3 data-i18n="mod.tasks">Завдання</h3><p data-i18n="mod.tasks.p">Плануй день, додавай підзавдання та повторювані справи.</p></div>
       <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div><h3 data-i18n="mod.goals">Цілі</h3><p data-i18n="mod.goals.p">Великі цілі, розбиті на маленькі кроки, з дедлайнами та фото.</p></div>
+      
       <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg></div><h3 data-i18n="mod.habits">Звички</h3><p data-i18n="mod.habits.p">Гнучкий розклад, серії та щоденний прогрес.</p></div>
       <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 11-1 9"></path><path d="m19 11-4-7"></path><path d="M2 11h20"></path><path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4"></path><path d="M4.5 15.5h15"></path><path d="m5 11 4-7"></path><path d="m9 11 1 9"></path></svg></div><h3 data-i18n="mod.shop">Списки покупок</h3><p data-i18n="mod.shop.p">Усе потрібне за категоріями - відмічай покупки одним дотиком.</p></div>
     </div>
@@ -511,6 +538,18 @@
     <div class="shot"><img src="/assets/shots/s7.jpg" alt="Goals with steps, deadlines and photos" loading="lazy" width="720" height="1560"><p data-i18n="gal.c7">Цілі з кроками, дедлайнами та фото</p></div>
     <div class="shot"><img src="/assets/shots/s8.jpg" alt="Tasks on a timeline and habits with daily progress" loading="lazy" width="720" height="1560"><p data-i18n="gal.c8">Задачі та звички</p></div>
     <div class="shot"><img src="/assets/shots/s9.jpg" alt="Calendar: open any day and see everything" loading="lazy" width="720" height="1560"><p data-i18n="gal.c9">Відкрий будь-який день - і побачиш усе</p></div>
+  </div>
+</section>
+
+<section id="templates">
+  <div class="wrap">
+    <h2 class="serif" data-i18n="tpl.h2">Безкоштовний шаблон цілей на 2027 рік</h2>
+    <p class="sub" data-i18n="tpl.sub">Розплануй рік на папері, а далі веди цілі в застосунку. PDF безкоштовно, без реєстрації.</p>
+    
+    
+    <div class="tpl-grid one">
+      <a class="tpl" href="/uk/templates/tsili-na-2027-rik/" data-goatcounter-click="home-tpl-ukgoals"><img src="/uk/templates/tsili-na-2027-rik/printable-preview.webp" alt="Шаблон цілей на 2027 рік для друку" loading="lazy" width="900" height="1273"><div><b>Цілі на 2027 рік: приклади і шаблон</b><span>Приклади цілей для кожної сфери життя і шаблон, який можна роздрукувати.</span><small>PDF безкоштовно</small></div></a>
+    </div>
   </div>
 </section>
 
@@ -581,6 +620,8 @@
       <a href="/privacy-policy.html" data-i18n="ft.privacy">Політика конфіденційності</a>
       <a href="/terms-of-use.html" data-i18n="ft.terms">Умови використання</a>
       <a href="/data-deletion.html" data-i18n="ft.delete">Видалення даних</a>
+      
+      
       <a href="/uk/templates/tsili-na-2027-rik/">Цілі на 2027 рік</a>
       <a href="/consumer-health-data.html">Consumer Health Data</a>
       <a href="mailto:selfos.contact@gmail.com" data-i18n="ft.contact">Контакт</a>

@@ -318,6 +318,32 @@
     .bf-sticker b { font-size: 26px; }
   }
 
+  /* Language-only nodes (tools/build-uk.mjs): data-lang-only="en" is dropped
+     from /uk/, data-lang-only="uk" stays hidden here and is shown on /uk/. */
+  [hidden] { display: none !important; }
+  a.tile { display: block; color: inherit; text-decoration: none; }
+  .tile .go { color: var(--muted); font-weight: 400; margin-left: 4px; }
+  /* Free printables (seasonal, December 2026 - January 2027) */
+  .tpl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .tpl { display: flex; flex-direction: column; background: var(--tile); border: 1px solid var(--tile-line); border-radius: 20px; overflow: hidden; color: inherit; text-decoration: none; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+  .tpl:hover { transform: translateY(-3px); border-color: rgba(16,185,129,.38); box-shadow: 0 10px 24px var(--shadow); }
+  .tpl img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; background: #f4f1ea; }
+  .tpl div { display: flex; flex-direction: column; flex: 1; padding: 14px 16px 18px; }
+  .tpl b { display: block; font-family: "Playfair Display", Georgia, serif; font-size: 19px; font-weight: 600; line-height: 1.25; margin-bottom: 6px; }
+  .tpl span { display: block; font-size: 14px; color: var(--muted); margin-bottom: 12px; }
+  .tpl small { align-self: flex-start; margin-top: auto; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--tile-line); font-size: 12px; color: var(--ink-soft); }
+  .tpl-grid.one { grid-template-columns: 1fr; max-width: 720px; }
+  .tpl-grid.one .tpl { flex-direction: row; align-items: center; }
+  .tpl-grid.one img { width: 180px; flex: none; }
+  .tpl-all { display: inline-block; margin-top: 22px; font-weight: 600; color: var(--ink); text-underline-offset: 4px; }
+  @media (max-width: 720px) {
+    .tpl-grid { grid-template-columns: 1fr; gap: 12px; }
+    .tpl { flex-direction: row; align-items: center; }
+    .tpl img, .tpl-grid.one img { width: 84px; flex: none; margin: 14px 0 14px 14px; border-radius: 10px; }
+    .tpl div { padding: 14px 16px; }
+    .tpl b { font-size: 17px; }
+  }
+
   @media (max-width: 960px) { .menu { display: none; } }
   @media (max-width: 860px) {
     .hero .wrap { grid-template-columns: 1fr; padding-top: 40px; padding-bottom: 48px; }
@@ -419,7 +445,8 @@
       <p class="group-label" data-i18n="mod.g2">Care for your day</p>
       <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg></div><h3 data-i18n="mod.tasks">Tasks</h3><p data-i18n="mod.tasks.p">A day on a timeline, with time slots, subtasks and repeats.</p></div>
       <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h3 data-i18n="mod.goals">Goals</h3><p data-i18n="mod.goals.p">Big dreams broken into steps, with deadlines and photos.</p></div>
-      <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></div><h3 data-i18n="mod.habits">Habits</h3><p data-i18n="mod.habits.p">Flexible schedules, streaks and daily progress.</p></div>
+      <a class="tile" href="/features/habit-tracker/" data-lang-only="en" data-goatcounter-click="home-tile-habits"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></div><h3>Habits <span class="go" aria-hidden="true">→</span></h3><p>Flexible schedules, streaks and daily progress.</p></a>
+      <div class="tile" data-lang-only="uk" hidden><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></div><h3 data-i18n="mod.habits">Habits</h3><p data-i18n="mod.habits.p">Flexible schedules, streaks and daily progress.</p></div>
       <div class="tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 11-1 9"/><path d="m19 11-4-7"/><path d="M2 11h20"/><path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4"/><path d="M4.5 15.5h15"/><path d="m5 11 4-7"/><path d="m9 11 1 9"/></svg></div><h3 data-i18n="mod.shop">Shopping lists</h3><p data-i18n="mod.shop.p">Groceries and more, by category, checked off in a tap.</p></div>
     </div>
   </div>
@@ -461,6 +488,22 @@
     <div class="shot"><img src="assets/shots/s7.jpg" alt="Goals with steps, deadlines and photos" loading="lazy" width="720" height="1560"><p data-i18n="gal.c7">Goals with steps, deadlines and photos</p></div>
     <div class="shot"><img src="assets/shots/s8.jpg" alt="Tasks on a timeline and habits with daily progress" loading="lazy" width="720" height="1560"><p data-i18n="gal.c8">Tasks and habits</p></div>
     <div class="shot"><img src="assets/shots/s9.jpg" alt="Calendar: open any day and see everything" loading="lazy" width="720" height="1560"><p data-i18n="gal.c9">Open any day, see it all</p></div>
+  </div>
+</section>
+
+<section id="templates">
+  <div class="wrap">
+    <h2 class="serif" data-i18n="tpl.h2">Free printables for the new year</h2>
+    <p class="sub" data-i18n="tpl.sub">Plan December and 2027 on paper, then keep it going in the app. Free PDFs, no sign-up.</p>
+    <div class="tpl-grid" data-lang-only="en">
+      <a class="tpl" href="/templates/new-year-reset-checklist/" data-goatcounter-click="home-tpl-newyear"><img src="/templates/new-year-reset-checklist/printable-preview.webp" alt="New Year Reset Checklist 2027, printable" loading="lazy" width="900" height="1165"><div><b>New Year Reset Checklist 2027</b><span>Look back, clear your space and choose three goals you'll keep.</span><small>Free PDF</small></div></a>
+      <a class="tpl" href="/templates/2027-vision-board-ideas/" data-goatcounter-click="home-tpl-visionboard"><img src="/templates/2027-vision-board-ideas/printable-preview.webp" alt="2027 vision board and goals worksheet, printable" loading="lazy" width="900" height="1165"><div><b>2027 Vision Board Ideas &amp; Goals Worksheet</b><span>Ideas for every area of life and a two-page worksheet.</span><small>Free PDF</small></div></a>
+      <a class="tpl" href="/templates/december-self-care-calendar/" data-goatcounter-click="home-tpl-deccalendar"><img src="/templates/december-self-care-calendar/calendar.webp" alt="December self-care calendar with 31 cozy ideas" loading="lazy" width="900" height="1125"><div><b>December Self-Care Calendar</b><span>31 small, cozy ideas, one for each day.</span><small>Free PDF</small></div></a>
+    </div>
+    <a class="tpl-all" href="/templates/" data-lang-only="en" data-goatcounter-click="home-tpl-all">All free templates →</a>
+    <div class="tpl-grid one" data-lang-only="uk" hidden>
+      <a class="tpl" href="/uk/templates/tsili-na-2027-rik/" data-goatcounter-click="home-tpl-ukgoals"><img src="/uk/templates/tsili-na-2027-rik/printable-preview.webp" alt="Шаблон цілей на 2027 рік для друку" loading="lazy" width="900" height="1273"><div><b>Цілі на 2027 рік: приклади і шаблон</b><span>Приклади цілей для кожної сфери життя і шаблон, який можна роздрукувати.</span><small>PDF безкоштовно</small></div></a>
+    </div>
   </div>
 </section>
 
@@ -531,8 +574,9 @@
       <a href="privacy-policy.html" data-i18n="ft.privacy">Privacy Policy</a>
       <a href="terms-of-use.html" data-i18n="ft.terms">Terms of Use</a>
       <a href="data-deletion.html" data-i18n="ft.delete">Data deletion</a>
-      <a href="/templates/">Free templates</a>
-      <a href="/features/habit-tracker/">Habit tracker</a>
+      <a href="/templates/" data-lang-only="en">Free templates</a>
+      <a href="/features/habit-tracker/" data-lang-only="en">Habit tracker</a>
+      <a href="/uk/templates/tsili-na-2027-rik/" data-lang-only="uk" hidden>Цілі на 2027 рік</a>
       <a href="/consumer-health-data.html">Consumer Health Data</a>
       <a href="mailto:selfos.contact@gmail.com" data-i18n="ft.contact">Contact</a>
     </div>
@@ -580,6 +624,8 @@
     "bon.c1": "День 1", "bon.c2": "Росте", "bon.c3": "У цвіту",
     "gal.h2": "Зазирни всередину",
     "gal.sub": "Темні тихі екрани. Цифри, які читаються з першого погляду.",
+    "tpl.h2": "Безкоштовний шаблон цілей на 2027 рік",
+    "tpl.sub": "Розплануй рік на папері, а далі веди цілі в застосунку. PDF безкоштовно, без реєстрації.",
     "gal.c1": "Турбота про кожну частину тебе",
     "gal.c2": "Здоров'я і фокус в одному місці",
     "gal.c3": "Прогрес і експорт твоєї історії",
